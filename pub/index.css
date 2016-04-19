@@ -1,0 +1,21 @@
+md-sidenav {
+	width: 90pt;
+}
+
+md-sidenav  md-list {
+	padding: 0px 0px 8px 0px;
+}
+
+md-sidenav > md-list > md-list-item > button {
+	width: 100%;
+	text-align: left center;
+}
+
+md-sidenav > md-list > md-list-item > button > span {
+	text-transform: none;
+	/*font-weight: bold;*/
+}
+
+.word-filter {
+	font-size: 100%;
+}
