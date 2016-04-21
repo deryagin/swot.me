@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="index.css">
 </head>
-<body ng-app="BlankApp" ng-cloak>
+<!--<body ng-app="Swot.Me" ng-cloak>-->
+<body>
+  <div ng-view></div>
 
   <div flex layout="row">
     <md-sidenav
@@ -161,20 +163,20 @@
     </div>
   </div>
 
-
   <script src="/vendor/node_modules/angular/angular.min.js"></script>
   <script src="/vendor/node_modules/angular-route/angular-route.min.js"></script>
   <script src="/vendor/node_modules/angular-animate/angular-animate.min.js"></script>
   <script src="/vendor/node_modules/angular-aria/angular-aria.min.js"></script>
   <script src="/vendor/node_modules/angular-messages/angular-messages.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="index.js"></script>
 
-  <script type="text/javascript">
-    angular
-      .module('BlankApp', ['ngMaterial'])
-      .config(function ($mdIconProvider) {
-//					$mdIconProvider.icon('menu', '/img/icon/menu.svg', 24);
-      });
-  </script>
+  <!--<script type="text/javascript">-->
+    <!--angular-->
+      <!--.module('Swot.Me', ['ngMaterial'])-->
+      <!--.config(function ($mdIconProvider) {-->
+<!--//					$mdIconProvider.icon('menu', '/img/icon/menu.svg', 24);-->
+      <!--});-->
+  <!--</script>-->
 </body>
 </html>
