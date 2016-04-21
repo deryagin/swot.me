@@ -1,6 +1,6 @@
 define([
   'module/words/controller'
-  
+
 ], function(WordsController) {
 	'use strict';
 
@@ -9,6 +9,10 @@ define([
   return function RouteProvider($routeProvider) {
     $routeProvider
       .when('/', {
+        controller: WordsController.name,
+        templateUrl: '/module/words/words.tpl.html'
+      })
+      .when('/words', {
         controller: WordsController.name,
         templateUrl: '/module/words/words.tpl.html'
       })

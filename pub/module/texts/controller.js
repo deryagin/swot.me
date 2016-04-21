@@ -3,7 +3,7 @@ define([
 ], function() {
 	'use strict';
 
-  return function WordsController() {
+  return function TextsController() {
 
   };
 });

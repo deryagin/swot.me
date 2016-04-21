@@ -5,10 +5,10 @@ define([
   'use strict';
 
   require([
-    // 'module/main/index',
-    'module/words/index'
+    'module/words/index',
+    'module/texts/index'
   ], function (words) {
-    var application = angular.module('appication', ['ngRoute', 'ngMaterial', 'words']);
+    var application = angular.module('appication', ['ngRoute', 'ngMaterial', 'words', 'texts']);
     // application.$inject = ['ngRoute', 'ngMaterial', 'words'];
     // application.$inject.push(main.name);
     // application.$inject.push(words.name);
