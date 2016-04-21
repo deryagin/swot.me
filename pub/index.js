@@ -1,11 +1,12 @@
-var main = angular.module('Swot.Me', ['ngRoute', 'ngMaterial']);
+define([
+	'config'
 
-main.config(['$locationProvider',
-  function configAppication($locationProvider) {
-    $locationProvider.hashPrefix('!');
-  }
-]);
+], function() {
+  'use strict';
 
-angular.element(document).ready(function startApplication() {
-  angular.bootstrap(document, ['Swot.Me']);
+  require([
+    'module/main/index'
+  ], function (main) {
+    angular.bootstrap(document, [main.name]);
+  });
 });
