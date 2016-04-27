@@ -1,11 +1,5 @@
 {
-  "name": "swot.me",
-  "version": "0.0.0",
-  "description": "This package.json is used to install front-end libraries.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "This package.json is only used to install Front-End libraries.",
   "dependencies": {
     "angular": "^1.5.5",
     "angular-animate": "^1.5.5",
@@ -14,7 +8,5 @@
     "angular-messages": "^1.5.5",
     "angular-route": "^1.5.5",
     "requirejs": "^2.2.0"
-  },
-  "author": "deryagin <deryagin.and@gmail.com>",
-  "license": "ISC"
+  }
 }

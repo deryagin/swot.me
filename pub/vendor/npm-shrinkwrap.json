@@ -1,0 +1,39 @@
+{
+  "dependencies": {
+    "angular": {
+      "version": "1.5.5",
+      "from": "angular@>=1.5.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular/-/angular-1.5.5.tgz"
+    },
+    "angular-animate": {
+      "version": "1.5.5",
+      "from": "angular-animate@>=1.5.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.5.5.tgz"
+    },
+    "angular-aria": {
+      "version": "1.5.5",
+      "from": "angular-aria@>=1.5.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular-aria/-/angular-aria-1.5.5.tgz"
+    },
+    "angular-material": {
+      "version": "1.0.7",
+      "from": "angular-material@>=1.0.7 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.7.tgz"
+    },
+    "angular-messages": {
+      "version": "1.5.5",
+      "from": "angular-messages@>=1.5.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.5.5.tgz"
+    },
+    "angular-route": {
+      "version": "1.5.5",
+      "from": "angular-route@>=1.5.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.5.tgz"
+    },
+    "requirejs": {
+      "version": "2.2.0",
+      "from": "requirejs@>=2.2.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/requirejs/-/requirejs-2.2.0.tgz"
+    }
+  }
+}
