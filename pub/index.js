@@ -1,22 +1,18 @@
 define([
-	'config'
+	'bootstrap/requirejs.config',
+  'bootstrap/angularjs.loader'
 
-], function() {
+], function(config, loader) {
   'use strict';
 
   require([
     'module/words/index',
     'module/texts/index'
-  ], function (words, texts) {
-    var application = angular.module('appication', ['ngRoute', 'ngMaterial']);
-    application.requires.push(words.name);
-    application.requires.push(texts.name);
-
-    application.config(['$locationProvider', function ($locationProvider) {
-        $locationProvider.hashPrefix('!');
-      }
-    ]);
-
+  ], function() {
+    var requires = ['ngRoute', 'ngMaterial'];
+    var application = angular.module('appication', requires);
+    loader.configApplication(application);
+    loader.registerModules(application, arguments);
     angular.bootstrap(document, [application.name]);
   });
 });

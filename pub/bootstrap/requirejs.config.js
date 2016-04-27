@@ -5,7 +5,9 @@ define([
 
   require.config({
     baseUrl: '/',
+    
     paths: {},
+    
     shim: {}
   });
 });
