@@ -4,8 +4,8 @@ define([
 ], function(RouteProvider, TextsController) {
 	'use strict';
 
-  var words = angular.module('texts', []);
-  words.config(RouteProvider);
-  words.controller('TextsController', TextsController);
-  return words;
+  var module = angular.module('texts', []);
+  module.config(RouteProvider);
+  module.controller('TextsController', TextsController);
+  return module;
 });
