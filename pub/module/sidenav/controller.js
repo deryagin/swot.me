@@ -3,12 +3,12 @@ define([
 ], function() {
 	'use strict';
 
-  return function SidenavController($scope) {
+  return function SidenavController($location) {
 
-    SidenavController.$inject = ['$scope'];
+    SidenavController.$inject = ['$location'];
 
-    $scope.click = function () {
-      alert('SidenavController');
+    this.click = function (name) {
+      $location.path('/' + name);
     };
   }
 });

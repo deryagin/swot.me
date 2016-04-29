@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="/module/sidenav/index.css">
 </head>
 <body ng-controller="AppController as app">
-  <div ng-viewport></div>
+  <div layout="row">
+    <div ng-viewport="sidenav"></div>
+    <div ng-viewport="content" flex></div>
+  </div>
 
   <script src="/vendor/node_modules/angular/angular.min.js"></script>
   <script src="/vendor/node_modules/angular-new-router/dist/router.es5.js"></script>

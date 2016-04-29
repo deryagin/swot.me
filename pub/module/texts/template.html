@@ -1,19 +1,15 @@
-<div flex layout="row">
-  <div ng-include="'/module/sidenav/template.html'"></div>
+<div layout="column" layout-fill>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Menu">
+        <i class="material-icons">menu</i>
+      </md-button>
 
-  <div layout="column" layout-fill>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Menu">
-          <i class="material-icons">menu</i>
-        </md-button>
+      Some toolbar buttons!
+    </div>
+  </md-toolbar>
 
-        Some toolbar buttons!
-      </div>
-    </md-toolbar>
-
-    <md-content layout="column">
-      Texts list.
-    </md-content>
-  </div>
+  <md-content layout="column">
+    Texts list.
+  </md-content>
 </div>
