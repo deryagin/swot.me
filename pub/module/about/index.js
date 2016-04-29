@@ -3,6 +3,6 @@ define([
 ], function() {
 	'use strict';
 
-  var module = angular.module('about', []);
+  var module = angular.module('swot.about', []);
   return module;
 });

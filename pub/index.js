@@ -6,6 +6,7 @@ define([
   'use strict';
 
   require([
+    'module/sidenav/index',
     'module/texts/index',
     'module/words/index',
     'module/stats/index',
@@ -17,16 +18,19 @@ define([
     'module/help/index',
     'module/about/index'
   ], function() {
-    var requires = ['ngNewRouter', 'ngMaterial', 'texts', 'words'];
-    var application = angular.module('appication', requires);
+    var requires = ['ngNewRouter', 'ngMaterial'];
+    var application = angular.module('swot.app', requires);
+    loader.configApplication(application);
+    loader.registerModules(application, arguments);
+
     application.config(ComponentMapping);
     application.controller('AppController', ['$router', AppController]);
 
     function AppController($router) {
       $router.config([
         {path: '/', redirectTo: '/texts'},
-        {path: '/texts', component: 'texts'},
-        {path: '/words', component: 'words'}
+        {path: '/texts', component: {sidenav: 'sidenav', content: 'texts'}},
+        {path: '/words', component: {sidenav: 'sidenav', content: 'words'}}
       ]);
     }
 
@@ -36,8 +40,6 @@ define([
       });
     }
 
-    loader.configApplication(application);
-    // loader.registerModules(application, arguments);
     angular.bootstrap(document, [application.name]);
   });
 });

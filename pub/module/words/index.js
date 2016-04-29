@@ -4,7 +4,7 @@ define([
 ], function(WordsController) {
 	'use strict';
 
-  var module = angular.module('words', []);
+  var module = angular.module('swot.words', []);
   module.controller('WordsController', WordsController);
   return module;
 });
