@@ -25,10 +25,10 @@
       "from": "angular-messages@>=1.5.5 <2.0.0",
       "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.5.5.tgz"
     },
-    "angular-route": {
-      "version": "1.5.5",
-      "from": "angular-route@>=1.5.5 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.5.tgz"
+    "angular-new-router": {
+      "version": "0.5.3",
+      "from": "angular-new-router@latest",
+      "resolved": "https://registry.npmjs.org/angular-new-router/-/angular-new-router-0.5.3.tgz"
     },
     "requirejs": {
       "version": "2.2.0",

@@ -6,7 +6,7 @@
     "angular-aria": "^1.5.5",
     "angular-material": "^1.0.7",
     "angular-messages": "^1.5.5",
-    "angular-route": "^1.5.5",
+    "angular-new-router": "^0.5.3",
     "requirejs": "^2.2.0"
   }
 }
