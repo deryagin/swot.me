@@ -1,11 +1,12 @@
 define([
-	'bootstrap/requirejs.config',
-  'bootstrap/angularjs.loader'
+  'bootstrap/requirejs.config',
+  'bootstrap/module.registrator'
 
-], function(config, loader) {
+], function(config, registrator) {
   'use strict';
 
   require([
+    'module/app/index',
     'module/sidenav/index',
     'module/texts/index',
     'module/words/index',
@@ -17,29 +18,8 @@ define([
     'module/ideas/index',
     'module/help/index',
     'module/about/index'
-  ], function() {
-    var requires = ['ngNewRouter', 'ngMaterial'];
-    var application = angular.module('swot.app', requires);
-    loader.configApplication(application);
-    loader.registerModules(application, arguments);
-
-    application.config(ComponentMapping);
-    application.controller('AppController', ['$router', AppController]);
-
-    function AppController($router) {
-      $router.config([
-        {path: '/', redirectTo: '/texts'},
-        {path: '/texts', component: {sidenav: 'sidenav', content: 'texts'}},
-        {path: '/words', component: {sidenav: 'sidenav', content: 'words'}}
-      ]);
-    }
-
-    function ComponentMapping($componentLoaderProvider) {
-      $componentLoaderProvider.setTemplateMapping(function (name) {
-        return './module/' + name + '/template.html';
-      });
-    }
-
-    angular.bootstrap(document, [application.name]);
+  ], function(app) {
+    registrator.addRequires(app, arguments);
+    angular.bootstrap(document, [app.name]);
   });
 });
