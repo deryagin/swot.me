@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "description": "This package.json is only used to install Deploy dependencies.",
+  "dependencies": {
+  }
+}

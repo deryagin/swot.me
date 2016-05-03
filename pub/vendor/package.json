@@ -1,5 +1,6 @@
 {
-  "description": "This package.json is only used to install Front-End libraries.",
+  "private": true,
+  "description": "This package.json is only used to install Front-End dependencies.",
   "dependencies": {
     "angular": "^1.5.5",
     "angular-animate": "^1.5.5",

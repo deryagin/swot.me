@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "swot.me",
+  "main": "./srv/index.js",
+  "description": "This MAIN package.json is only used to run general tasks.",
+  "scripts": {
+    "setup": "(cd pub && npm install); (cd srv && npm install); (cd test && npm install); (cd dpl && npm install)",
+    "start": "",
+    "debug": "",
+    "test": "",
+    "cover": ""
+  }
+}
