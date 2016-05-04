@@ -1,8 +1,9 @@
 define([
-	'module/sidenav/controller'
+  'module/sidenav/controller',
+  'css!module/sidenav/styles'
 
 ], function(SidenavController) {
-	'use strict';
+  'use strict';
 
   var module = angular.module('swot.sidenav', []);
   module.controller('SidenavController', SidenavController);

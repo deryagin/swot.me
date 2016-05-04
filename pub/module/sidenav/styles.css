@@ -3,19 +3,14 @@ md-sidenav {
 }
 
 md-sidenav  md-list {
-	padding: 0px 0px 8px 0px;
+	padding: 0 0 8px 0;
 }
 
 md-sidenav > md-list > md-list-item > button {
 	width: 100%;
-	text-align: left center;
+	text-align: left;
 }
 
 md-sidenav > md-list > md-list-item > button > span {
 	text-transform: none;
-	/*font-weight: bold;*/
-}
-
-.word-filter {
-	font-size: 100%;
 }

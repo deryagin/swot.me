@@ -5,9 +5,15 @@ define([
 
   require.config({
     baseUrl: '/',
-    
+
     paths: {},
-    
-    shim: {}
+
+    shim: {},
+
+    map: {
+      '*': {
+        'css': 'vendor/node_modules/require-css/css'
+      }
+    }
   });
 });
