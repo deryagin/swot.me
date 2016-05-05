@@ -1,14 +1,17 @@
 define([
 
 ], function() {
-	'use strict';
+  'use strict';
 
   return function SidenavController($location) {
 
     SidenavController.$inject = ['$location'];
 
-    this.click = function (name) {
-      $location.path('/' + name);
+    this.selectedMenu = $location.path().substr(1) || 'texts';
+
+    this.navigateTo = function (menuName) {
+      this.selectedMenu = menuName;
+      $location.path('/' + menuName);
     };
   }
 });
