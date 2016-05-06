@@ -1,9 +1,9 @@
 define([
-	'module/app/config',
+  'module/app/config',
   'module/app/controller'
 
 ], function(AppConfig, AppController) {
-	'use strict';
+  'use strict';
 
   var module = angular.module('swot.app', ['ngNewRouter', 'ngMaterial']);
   module.controller('AppController', AppController);

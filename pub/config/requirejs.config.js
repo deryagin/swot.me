@@ -1,7 +1,7 @@
 define([
 
 ], function() {
-	'use strict';
+  'use strict';
 
   require.config({
     baseUrl: '/',
@@ -11,9 +11,7 @@ define([
     shim: {},
 
     map: {
-      '*': {
-        'css': 'vendor/node_modules/require-css/css'
-      }
+      '*': {'css': 'vendor/node_modules/require-css/css'}
     }
   });
 });

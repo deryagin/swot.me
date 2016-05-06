@@ -1,9 +1,9 @@
 define([
 
 ], function() {
-	'use strict';
+  'use strict';
 
-	return function AppConfig($locationProvider, $componentLoaderProvider) {
+  return function AppConfig($locationProvider, $componentLoaderProvider) {
 
     AppConfig.$inject = ['$locationProvider', '$componentLoaderProvider'];
 

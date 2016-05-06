@@ -1,8 +1,7 @@
 define([
-  'bootstrap/requirejs.config',
-  'bootstrap/module.registrator'
+  'config/requirejs.config'
 
-], function(config, registrator) {
+], function() {
   'use strict';
 
   require([
@@ -19,7 +18,8 @@ define([
     'module/help/index',
     'module/about/index'
   ], function(app) {
-    registrator.addRequires(app, arguments);
+    var modules = Array.prototype.slice.call(arguments, 1);
+    modules.forEach(function (module) { app.requires.push(module.name); });
     angular.bootstrap(document, [app.name]);
   });
 });

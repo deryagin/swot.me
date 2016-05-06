@@ -1,7 +1,7 @@
 define([
 
 ], function() {
-	'use strict';
+  'use strict';
 
   return [
     {path: '/', redirectTo: '/texts'},

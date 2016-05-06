@@ -1,8 +1,8 @@
 define([
-	'module/app/routes'
+  'module/app/routes'
 
 ], function(routes) {
-	'use strict';
+  'use strict';
 
   return function AppController($router) {
 
