@@ -10,6 +10,7 @@ md-sidenav md-list {
 
 md-sidenav > md-list > md-list-item > button {
   width: 100%;
+  text-align: left !important;
 }
 
 md-sidenav > md-list > md-list-item > button.selectedMenu {
