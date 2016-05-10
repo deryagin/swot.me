@@ -4,6 +4,10 @@ md-sidenav {
   margin: 0;
 }
 
+.site-name {
+  font-weight: bold;
+}
+
 md-sidenav md-list {
   padding: 0 0 0 0;
 }

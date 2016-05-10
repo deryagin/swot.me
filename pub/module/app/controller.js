@@ -4,10 +4,14 @@ define([
 ], function(routes) {
   'use strict';
 
-  return function AppController($router) {
+  return function AppController($router, $mdSidenav) {
 
-    AppController.$inject = ['$router'];
+    AppController.$inject = ['$router', '$mdSidenav'];
 
     $router.config(routes);
+    
+    this.toggleMenu = function toggleMenu() {
+      $mdSidenav('sidenav-left').toggle();
+    };
   }
 });

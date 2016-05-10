@@ -1,8 +1,8 @@
 define([
-	'module/texts/controller'
+  'module/texts/controller'
 
 ], function(TextsController) {
-	'use strict';
+  'use strict';
 
   var module = angular.module('swot.texts', []);
   module.controller('TextsController', TextsController);

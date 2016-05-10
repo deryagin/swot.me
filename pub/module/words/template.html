@@ -1,8 +1,12 @@
 <div layout="column" layout-fill>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Menu">
-        <i class="material-icons">menu</i>
+      <md-button
+        class="md-icon-button"
+        ng-click="app.toggleMenu()"
+        hide-gt-sm
+        aria-label="Toggle Menu">
+        <md-icon md-svg-icon="general-menu"></md-icon>
       </md-button>
 
       <section layout="row" layout-align="center center">

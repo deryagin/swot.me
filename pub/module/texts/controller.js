@@ -1,9 +1,14 @@
 define([
 
 ], function() {
-	'use strict';
+  'use strict';
 
-  return function TextsController() {
+  return function TextsController($mdSidenav) {
 
+    TextsController.$inject = ['$mdSidenav'];
+
+    this.toggleMenu = function toggleMenu() {
+      $mdSidenav('sidenav-left').toggle();
+    };
   };
 });
