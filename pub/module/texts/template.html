@@ -1,15 +1,99 @@
 <div layout="column" layout-fill>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Menu">
-        <i class="material-icons">menu</i>
+      <md-button
+        class="md-icon-button"
+        ng-click="app.toggleMenu()"
+        hide-gt-sm
+        aria-label="Toggle Menu">
+        <md-icon md-svg-icon="general-menu"></md-icon>
       </md-button>
 
-      Some toolbar buttons!
+      <md-button class="md-icon-button" aria-label="Add">
+        <md-icon md-svg-icon="general-add"></md-icon>
+      </md-button>
+
+      <span flex></span>
+
+      <md-button class="md-icon-button" aria-label="Search">
+        <md-icon md-svg-icon="general-search"></md-icon>
+      </md-button>
+
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="general-more_vert"></md-icon>
+      </md-button>
     </div>
   </md-toolbar>
 
-  <md-content layout="column">
-    Texts list.
+  <md-content>
+    <md-card>
+      <md-list>
+        <md-divider></md-divider>
+        <md-list-item ng-click="texts.navigateTo(12345)">
+          <p>Criminal Minds - 1x02</p>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-edit"
+            ng-click="texts.rename(12345)"
+            aria-label="Text Rename">
+          </md-icon>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-delete"
+            ng-click="texts.delete(12345)"
+            aria-label="Text Delete">
+          </md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="texts.navigateTo(12345)">
+          <p>Avatar (2009).TS.ViSiON.en</p>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-edit"
+            ng-click="texts.rename(12345)"
+            aria-label="Text Rename">
+          </md-icon>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-delete"
+            ng-click="texts.delete(12345)"
+            aria-label="Text Delete">
+          </md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="texts.navigateTo(12345)">
+          <p>Criminal Minds - 1x01 - Extreme Aggressor.en</p>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-edit"
+            ng-click="texts.rename(12345)"
+            aria-label="Text Rename">
+          </md-icon>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-delete"
+            ng-click="texts.delete(12345)"
+            aria-label="Text Delete">
+          </md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="texts.navigateTo(12345)">
+          <p>The.Passionate.Programmer.May.2009</p>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-edit"
+            ng-click="texts.rename(12345)"
+            aria-label="Text Rename">
+          </md-icon>
+          <md-icon
+            class="md-secondary"
+            md-svg-icon="general-delete"
+            ng-click="texts.delete(12345)"
+            aria-label="Text Delete">
+          </md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </md-card>
   </md-content>
 </div>
