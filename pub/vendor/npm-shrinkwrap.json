@@ -17,7 +17,7 @@
     },
     "angular-material": {
       "version": "1.0.7",
-      "from": "angular-material@>=1.0.7 <2.0.0",
+      "from": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.7.tgz",
       "resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.7.tgz"
     },
     "angular-messages": {
@@ -25,14 +25,19 @@
       "from": "angular-messages@>=1.5.5 <2.0.0",
       "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.5.5.tgz"
     },
-    "angular-new-router": {
-      "version": "0.5.3",
-      "from": "angular-new-router@latest",
-      "resolved": "https://registry.npmjs.org/angular-new-router/-/angular-new-router-0.5.3.tgz"
+    "angular-ui-router": {
+      "version": "0.2.18",
+      "from": "angular-ui-router@latest",
+      "resolved": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-0.2.18.tgz"
+    },
+    "require-css": {
+      "version": "0.1.8",
+      "from": "require-css@latest",
+      "resolved": "https://registry.npmjs.org/require-css/-/require-css-0.1.8.tgz"
     },
     "requirejs": {
       "version": "2.2.0",
-      "from": "requirejs@>=2.2.0 <3.0.0",
+      "from": "https://registry.npmjs.org/requirejs/-/requirejs-2.2.0.tgz",
       "resolved": "https://registry.npmjs.org/requirejs/-/requirejs-2.2.0.tgz"
     }
   }

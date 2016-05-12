@@ -1,15 +1,12 @@
 define([
-  'module/app/routes'
 
-], function(routes) {
+], function() {
   'use strict';
 
-  return function AppController($router, $mdSidenav) {
+  return function AppController($mdSidenav) {
 
-    AppController.$inject = ['$router', '$mdSidenav'];
+    AppController.$inject = ['$mdSidenav'];
 
-    $router.config(routes);
-    
     this.toggleMenu = function toggleMenu() {
       $mdSidenav('sidenav-left').toggle();
     };
