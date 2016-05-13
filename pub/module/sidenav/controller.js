@@ -3,15 +3,15 @@ define([
 ], function() {
   'use strict';
 
-  return function SidenavController($location, $mdSidenav) {
+  return function SidenavController($state, $mdSidenav) {
 
-    SidenavController.$inject = ['$location', '$mdSidenav'];
+    SidenavController.$inject = ['$state', '$mdSidenav'];
 
-    this.selectedMenu = $location.path().substr(1) || 'texts';
+    this.currentMenu = $state.$current.name.split('.')[0] || 'start';
 
-    this.navigateTo = function (menuName) {
-      this.selectedMenu = menuName;
-      $location.path('/' + menuName);
+    this.navigateTo = function (stateName) {
+      $state.go(stateName);
+      this.currentMenu = stateName;
       $mdSidenav('sidenav-left').toggle();
     };
   }
