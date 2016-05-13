@@ -11,13 +11,13 @@ define([
       abstract: true,
       url: '/texts',
       views: {
-        'sidenav@': {
+        'app.sidenav@': {
           templateUrl: '/module/sidenav/template.html',
           controller: 'SidenavController',
           controllerAs: 'sidenav'
         },
-        'content@': {
-          template: '<div ui-view="content"></div>'
+        'app.content@': {
+          template: '<div ui-view="texts.content"></div>'
         }
       }
     });
@@ -25,7 +25,7 @@ define([
     $stateProvider.state('texts.list', {
       url: '/list',
       views: {
-        'content@texts': {
+        'texts.content@texts': {
           templateUrl: '/module/texts/list/template.html',
           controller: 'TextsListController',
           controllerAs: 'textsList'
@@ -36,7 +36,7 @@ define([
     $stateProvider.state('texts.add', {
       url: '/add',
       views: {
-        'content@texts': {
+        'texts.content@texts': {
           templateUrl: '/module/texts/add/template.html',
           controller: 'TextsAddController',
           controllerAs: 'textsAdd'

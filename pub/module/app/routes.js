@@ -14,12 +14,12 @@ define([
       .state('start', {
         url: '/start',
         views: {
-          'sidenav': {
+          'app.sidenav@': {
             templateUrl: '/module/sidenav/template.html',
             controller: 'SidenavController',
             controllerAs: 'sidenav'
           },
-          'content': {
+          'app.content@': {
             templateUrl: '/module/start/template.html',
             controller: 'StartController',
             controllerAs: 'start'
@@ -44,12 +44,12 @@ define([
       .state('words', {
         url: '/words',
         views: {
-          'sidenav': {
+          'app.sidenav@': {
             templateUrl: '/module/sidenav/template.html',
             controller: 'SidenavController',
             controllerAs: 'sidenav'
           },
-          'content': {
+          'app.content@': {
             templateUrl: '/module/words/template.html',
             controller: 'WordsController',
             controllerAs: 'words'
