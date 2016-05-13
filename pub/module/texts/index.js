@@ -1,10 +1,15 @@
 define([
-  'module/texts/controller'
+  'module/texts/routes',
+  'module/texts/list/index',
+  'module/texts/add/index'
 
-], function(TextsController) {
+], function(TextsRoutes, ListModule, AddModule) {
   'use strict';
 
-  var module = angular.module('swot.texts', []);
-  module.controller('TextsController', TextsController);
+  var module = angular.module('swot.texts', [
+    ListModule.name,
+    AddModule.name
+  ]);
+  module.config(TextsRoutes);
   return module;
 });

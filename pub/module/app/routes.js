@@ -26,21 +26,21 @@ define([
           }
         }
       })
-      .state('texts', {
-        url: '/texts',
-        views: {
-          'sidenav': {
-            templateUrl: '/module/sidenav/template.html',
-            controller: 'SidenavController',
-            controllerAs: 'sidenav'
-          },
-          'content': {
-            templateUrl: '/module/texts/template.html',
-            controller: 'TextsController',
-            controllerAs: 'texts'
-          }
-        }
-      })
+      // .state('texts', {
+      //   url: '/texts',
+      //   views: {
+      //     'sidenav': {
+      //       templateUrl: '/module/sidenav/template.html',
+      //       controller: 'SidenavController',
+      //       controllerAs: 'sidenav'
+      //     },
+      //     'content': {
+      //       templateUrl: '/module/texts/template.html',
+      //       controller: 'TextsController',
+      //       controllerAs: 'texts'
+      //     }
+      //   }
+      // })
       .state('words', {
         url: '/words',
         views: {
