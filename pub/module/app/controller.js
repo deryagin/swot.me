@@ -3,12 +3,14 @@ define([
 ], function() {
   'use strict';
 
-  return function AppController($mdSidenav) {
+  return function AppController($state) {
 
-    AppController.$inject = ['$mdSidenav'];
+    AppController.$inject = ['$state'];
 
-    this.toggleMenu = function toggleMenu() {
-      $mdSidenav('sidenav-left').toggle();
+    var self = this;
+
+    self.navigateTo = function navigateTo(stateName) {
+      $state.go(stateName);
     };
   }
 });

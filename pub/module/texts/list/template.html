@@ -2,14 +2,17 @@
   <md-toolbar>
     <div class="md-toolbar-tools">
       <md-button
+        ng-click="$root.sidenav.toggleMenu()"
         class="md-icon-button"
-        ng-click="app.toggleMenu()"
         hide-gt-sm
         aria-label="Toggle Menu">
         <md-icon md-svg-icon="general-menu"></md-icon>
       </md-button>
 
-      <md-button class="md-icon-button" aria-label="Add">
+      <md-button
+        ng-click="app.navigateTo('texts.add')"
+        class="md-icon-button"
+        aria-label="Add">
         <md-icon md-svg-icon="general-add"></md-icon>
       </md-button>
 
@@ -29,7 +32,7 @@
     <md-card>
       <md-list>
         <md-divider></md-divider>
-        <md-list-item ng-click="texts.navigateTo(12345)">
+        <md-list-item ng-click="app.navigateTo(12345)">
           <p>Criminal Minds - 1x02</p>
           <md-icon
             class="md-secondary"
@@ -45,7 +48,7 @@
           </md-icon>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-click="texts.navigateTo(12345)">
+        <md-list-item ng-click="app.navigateTo(12345)">
           <p>Avatar (2009).TS.ViSiON.en</p>
           <md-icon
             class="md-secondary"
@@ -61,7 +64,7 @@
           </md-icon>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-click="texts.navigateTo(12345)">
+        <md-list-item ng-click="app.navigateTo(12345)">
           <p>Criminal Minds - 1x01 - Extreme Aggressor.en</p>
           <md-icon
             class="md-secondary"
@@ -77,7 +80,7 @@
           </md-icon>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-click="texts.navigateTo(12345)">
+        <md-list-item ng-click="app.navigateTo(12345)">
           <p>The.Passionate.Programmer.May.2009</p>
           <md-icon
             class="md-secondary"
