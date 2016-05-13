@@ -12,6 +12,14 @@
   <md-list>
     <md-list-item>
       <md-button
+        ng-click="sidenav.navigateTo('start')"
+        ng-class="{'md-primary md-hue-2 selectedMenu' : 'start' === sidenav.selectedMenu}">
+        <md-icon md-svg-icon="sidenav-start"></md-icon> Start
+      </md-button>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item>
+      <md-button
         ng-click="sidenav.navigateTo('texts')"
         ng-class="{'md-primary md-hue-2 selectedMenu' : 'texts' === sidenav.selectedMenu}">
         <md-icon md-svg-icon="sidenav-texts"></md-icon> Texts

@@ -7,9 +7,25 @@ define([
 
     AppRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    $urlRouterProvider.when('/', '/texts');
+    $urlRouterProvider.when('', '/start');
+    $urlRouterProvider.when('/', '/start');
 
     $stateProvider
+      .state('start', {
+        url: '/start',
+        views: {
+          'sidenav': {
+            templateUrl: '/module/sidenav/template.html',
+            controller: 'SidenavController',
+            controllerAs: 'sidenav'
+          },
+          'content': {
+            templateUrl: '/module/start/template.html',
+            controller: 'StartController',
+            controllerAs: 'start'
+          }
+        }
+      })
       .state('texts', {
         url: '/texts',
         views: {

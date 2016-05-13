@@ -7,6 +7,7 @@ define([
   require([
     'module/app/index',
     'module/sidenav/index',
+    'module/start/index',
     'module/texts/index',
     'module/words/index',
     'module/stats/index',
