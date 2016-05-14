@@ -1,12 +1,18 @@
 <md-sidenav
+  layout="column"
   md-component-id="sidenav-left"
   class="md-sidenav-left md-whiteframe-z2"
   md-is-locked-open="$mdMedia('gt-sm')">
 
-  <md-toolbar
-    layout-align="center center"
-    class="md-hue-2">
-    <span class="site-name">Swot.Me</span>
+  <md-toolbar class="md-tall md-hue-2">
+    <div flex>
+      <md-icon md-svg-icon="sidenav-avatar" class="avatar"></md-icon>
+    </div>
+    <!--<span flex></span>-->
+    <div layout="column" class="inset">
+      <div style="font-size: medium;">Firstname Lastname</div>
+      <div style="font-size: small;">email@domainname.com</div>
+    </div>
   </md-toolbar>
 
   <md-list>
