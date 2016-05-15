@@ -17,7 +17,7 @@ define([
     });
 
     $rootScope.sidenav = {
-      toggleMenu: function toggleMenu() {
+      toggle: function toggle() {
         $mdSidenav('sidenav-left').toggle();
       }
     }
