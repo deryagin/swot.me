@@ -12,97 +12,75 @@
 
   <md-content>
     <md-list>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('start')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'start' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-start"></md-icon>
-          Start
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('start')"
+        ng-class="{'sidenav-active' : 'start' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-start"></md-icon>
+        <p>Start</p>
       </md-list-item>
       <md-divider></md-divider>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('texts.list')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'texts' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-texts"></md-icon>
-          Texts
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('texts.list')"
+        ng-class="{'sidenav-active' : 'texts' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-texts"></md-icon>
+        <p>Texts</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('words')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'words' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-words"></md-icon>
-          Words
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('words')"
+        ng-class="{'sidenav-active' : 'words' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-words"></md-icon>
+        <p>Words</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('stats')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'stats' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-stats"></md-icon>
-          Stats
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('stats')"
+        ng-class="{'sidenav-active' : 'stats' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-stats"></md-icon>
+        <p>Stats</p>
       </md-list-item>
       <md-divider></md-divider>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('import')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'import' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-import"></md-icon>
-          Import
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('import')"
+        ng-class="{'sidenav-active' : 'import' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-import"></md-icon>
+        <p>Import</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('export')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'export' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-export"></md-icon>
-          Export
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('export')"
+        ng-class="{'sidenav-active' : 'export' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-export"></md-icon>
+        <p>Export</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('settings')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'settings' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-settings"></md-icon>
-          Settings
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('settings')"
+        ng-class="{'sidenav-active' : 'settings' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-settings"></md-icon>
+        <p>Settings</p>
       </md-list-item>
       <md-divider></md-divider>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('news')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'news' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-news"></md-icon>
-          News
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('news')"
+        ng-class="{'sidenav-active' : 'news' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-news"></md-icon>
+        <p>News</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('ideas')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'ideas' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-ideas"></md-icon>
-          Ideas
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('ideas')"
+        ng-class="{'sidenav-active' : 'ideas' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-ideas"></md-icon>
+        <p>Ideas</p>
       </md-list-item>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('help')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'help' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-help"></md-icon>
-          Help
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('help')"
+        ng-class="{'sidenav-active' : 'help' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-help"></md-icon>
+        <p>Help</p>
       </md-list-item>
       <md-divider></md-divider>
-      <md-list-item>
-        <md-button
-          ng-click="app.navigateTo('about')"
-          ng-class="{'md-primary md-hue-2 selectedMenu' : 'about' === sidenav.currentMenu}">
-          <md-icon md-svg-icon="sidenav-about"></md-icon>
-          About
-        </md-button>
+      <md-list-item
+        ng-click="app.navigateTo('about')"
+        ng-class="{'sidenav-active' : 'about' === sidenav.currentMenu}">
+        <md-icon md-svg-icon="sidenav-about"></md-icon>
+        <p>About</p>
       </md-list-item>
     </md-list>
   </md-content>
