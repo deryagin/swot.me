@@ -15,16 +15,6 @@
       "from": "angular-aria@>=1.5.5 <2.0.0",
       "resolved": "https://registry.npmjs.org/angular-aria/-/angular-aria-1.5.5.tgz"
     },
-    "angular-material": {
-      "version": "1.0.7",
-      "from": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.7.tgz",
-      "resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.7.tgz"
-    },
-    "angular-messages": {
-      "version": "1.5.5",
-      "from": "angular-messages@>=1.5.5 <2.0.0",
-      "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.5.5.tgz"
-    },
     "angular-ui-router": {
       "version": "0.2.18",
       "from": "angular-ui-router@latest",
