@@ -1,34 +1,34 @@
-<div layout="column" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <md-button
-        ng-click="$root.sidenav.toggleMenu()"
-        class="md-icon-button"
-        hide-gt-sm
-        aria-label="Toggle Menu">
-        <md-icon md-svg-icon="general-menu"></md-icon>
-      </md-button>
+<md-toolbar class="md-whiteframe-glow-z1">
+  <div class="md-toolbar-tools">
+    <md-button
+      ng-click="$root.sidenav.toggle()"
+      class="md-icon-button"
+      hide-gt-sm
+      aria-label="Toggle Menu">
+      <md-icon md-svg-icon="general-menu"></md-icon>
+    </md-button>
 
-      <md-button
-        ng-click="app.navigateTo('texts.add')"
-        class="md-icon-button"
-        aria-label="Add">
-        <md-icon md-svg-icon="general-add"></md-icon>
-      </md-button>
+    <md-button
+      ng-click="app.navigateTo('texts.add')"
+      class="md-icon-button"
+      aria-label="Add">
+      <md-icon md-svg-icon="general-add"></md-icon>
+    </md-button>
 
-      <span flex></span>
+    <span flex></span>
 
-      <md-button class="md-icon-button" aria-label="Search">
-        <md-icon md-svg-icon="general-search"></md-icon>
-      </md-button>
+    <md-button class="md-icon-button" aria-label="Search">
+      <md-icon md-svg-icon="general-search"></md-icon>
+    </md-button>
 
-      <md-button class="md-icon-button" aria-label="More">
-        <md-icon md-svg-icon="general-more_vert"></md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
+    <md-button class="md-icon-button" aria-label="More">
+      <md-icon md-svg-icon="general-more_vert"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
 
-  <md-content>
+<md-content layout="column" flex md-scroll-y>
+  <div ng-view layout-padding flex="noshrink">
     <md-card>
       <md-list>
         <md-divider></md-divider>
@@ -98,5 +98,5 @@
         <md-divider></md-divider>
       </md-list>
     </md-card>
-  </md-content>
-</div>
+  </div>
+</md-content>

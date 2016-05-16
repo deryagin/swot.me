@@ -17,7 +17,7 @@ define([
           controllerAs: 'sidenav'
         },
         'app.content@': {
-          template: '<div ui-view="texts.content"></div>'
+          template: '<div ui-view="texts.content" layout="column" flex></div>'
         }
       }
     });

@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body
+  layout="row"
   ng-controller="AppController as app"
   md-swipe-right="$root.sidenav.toggle()"
   md-swipe-left="$root.sidenav.toggle()">
 
-  <div layout="row">
-    <div ui-view="app.sidenav"></div>
-    <div ui-view="app.content" flex></div>
-  </div>
+  <div ui-view="app.sidenav" style="display: flex;"></div>
+  <div ui-view="app.content" style="display: flex;" layout-fill></div>
 
   <script src="/vendor/node_modules/requirejs/require.js" data-main="index.js"></script>
   <script src="/vendor/node_modules/angular/angular.min.js"></script>
