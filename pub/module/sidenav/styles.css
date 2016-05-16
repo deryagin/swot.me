@@ -1,3 +1,9 @@
+.sidenav-avatar {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+
 /*md-sidenav {*/
   /*width: 90pt;*/
   /*padding: 0;*/
@@ -24,17 +30,6 @@
 
 /*md-sidenav > md-list > md-list-item > button > span {*/
   /*text-transform: none;*/
-/*}*/
-
-/*.avatar {*/
-  /*width: 64px;*/
-  /*height: 64px;*/
-  /*position: relative;*/
-  /*margin: 25px 0 0 25px;*/
-  /*zoom:0.70;*/
-  /*transform: translateZ(0);*/
-  /*-webkit-transform: scale(1.30);*/
-  /*-moz-transform:scale(1.30);*/
 /*}*/
 
 /*md-content.md-default-theme {*/
