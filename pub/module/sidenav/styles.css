@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+.sidenav-active md-icon {
+  color: black;
+}
+
 .sidenav-active p {
   font-weight: bold;
 }
