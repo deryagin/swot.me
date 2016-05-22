@@ -9,14 +9,55 @@
       </md-button>
 
       <md-header>
-        <span>Add Text</span>
+        <span>New Text</span>
       </md-header>
     </div>
+
+    <md-tabs
+      md-stretch-tabs
+      class="md-primary"
+      md-selected="textsAdd.selectedTab">
+      <md-tab id="add-file" aria-controls="add-file-content">Add File</md-tab>
+      <md-tab id="copy-in" aria-controls="copy-in-content">Copy In</md-tab>
+      <md-tab id="add-url" aria-controls="add-url-content">Add Url</md-tab>
+    </md-tabs>
   </md-toolbar>
 
-  <md-content>
-    <md-card>
-      Add under construction!
-    </md-card>
+  <md-content flex md-scroll-y>
+    <ng-switch on="textsAdd.selectedTab" class="tabpanel-container">
+      <div
+        id="add-file-content"
+        aria-labelledby="add-file"
+        ng-switch-when="0"
+        layout="row" layout-align="center center">
+        <md-card flex-gt-sm="90" flex-gt-md="80">
+          <md-card-content>
+            <h2>Add File</h2>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div
+        id="copy-in-content"
+        aria-labelledby="copy-in"
+        ng-switch-when="1"
+        layout="row" layout-align="center center">
+        <md-card flex-gt-sm="90" flex-gt-md="80">
+          <md-card-content>
+            <h2>Copy In</h2>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div
+        id="add-url-content"
+        aria-labelledby="add-url"
+        ng-switch-when="2"
+        layout="row" layout-align="center center">
+        <md-card flex-gt-sm="90" flex-gt-md="80">
+          <md-card-content>
+            <h2>Add URL</h2>
+          </md-card-content>
+        </md-card>
+      </div>
+    </ng-switch>
   </md-content>
 </div>
