@@ -1,5 +1,6 @@
 define([
-  'module/texts/list/controller'
+  'module/texts/list/controller',
+  'css!module/texts/list/styles'
 
 ], function(TextsListController) {
   'use strict';

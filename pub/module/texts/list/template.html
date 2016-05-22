@@ -1,4 +1,4 @@
-<md-toolbar class="md-whiteframe-glow-z1">
+<md-toolbar class="md-whiteframe-glow-z1 no-animate" ng-show="!showSearch">
   <div class="md-toolbar-tools">
     <md-button
       ng-click="$root.sidenav.toggle()"
@@ -8,6 +8,8 @@
       <md-icon md-svg-icon="general-menu"></md-icon>
     </md-button>
 
+    <span flex></span>
+
     <md-button
       ng-click="app.navigateTo('texts.add')"
       class="md-icon-button"
@@ -15,9 +17,37 @@
       <md-icon md-svg-icon="general-add"></md-icon>
     </md-button>
 
-    <span flex></span>
+    <md-button
+      ng-click="showSearch = !showSearch"
+      class="md-icon-button"
+      aria-label="Search">
+      <md-icon md-svg-icon="general-search"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
 
-    <md-button class="md-icon-button" aria-label="Search">
+<md-toolbar class="md-whiteframe-glow-z1 no-animate" ng-show="showSearch">
+  <div class="md-toolbar-tools">
+    <md-button
+      ng-click="showSearch = !showSearch"
+      class="md-icon-button"
+      aria-label="Back">
+      <md-icon md-svg-icon="general-arrow_back"></md-icon>
+    </md-button>
+
+    <md-autocomplete
+      flex
+      md-no-progress
+      md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+      md-search-text="ctrl.searchText"
+      md-items="[]"
+      placeholder="Search">
+    </md-autocomplete>
+
+    <md-button
+      ng-click="showSearch = !showSearch"
+      class="md-icon-button"
+      aria-label="Search">
       <md-icon md-svg-icon="general-search"></md-icon>
     </md-button>
   </div>

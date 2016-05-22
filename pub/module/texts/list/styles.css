@@ -1,0 +1,8 @@
+md-autocomplete > md-autocomplete-wrap > md-progress-linear {
+  display: none;
+}
+
+.no-animate {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
