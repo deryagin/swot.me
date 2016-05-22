@@ -1,3 +1,10 @@
+<!--<md-button-->
+  <!--ng-click="app.navigateTo('texts.add')"-->
+  <!--class="md-fab md-fab-bottom-right"-->
+  <!--aria-label="Add">-->
+  <!--<md-icon md-svg-icon="general-add"></md-icon>-->
+<!--</md-button>-->
+
 <md-toolbar class="md-whiteframe-glow-z1 no-animate" ng-show="!showSearch">
   <div class="md-toolbar-tools">
     <md-button
@@ -31,8 +38,8 @@
     <md-button
       ng-click="showSearch = !showSearch"
       class="md-icon-button"
-      aria-label="Back">
-      <md-icon md-svg-icon="general-arrow_back"></md-icon>
+      aria-label="Close Search">
+      <md-icon md-svg-icon="general-close"></md-icon>
     </md-button>
 
     <md-autocomplete
@@ -47,7 +54,7 @@
     <md-button
       ng-click="showSearch = !showSearch"
       class="md-icon-button"
-      aria-label="Search">
+      aria-label="Toggle Search">
       <md-icon md-svg-icon="general-search"></md-icon>
     </md-button>
   </div>
