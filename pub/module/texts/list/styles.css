@@ -6,3 +6,11 @@ md-autocomplete > md-autocomplete-wrap > md-progress-linear {
   -webkit-transition: none !important;
   transition: none !important;
 }
+
+.textsList-currentOrder md-icon {
+  color: black;
+}
+
+.textsList-currentOrder span {
+  font-weight: bold;
+}

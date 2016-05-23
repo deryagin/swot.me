@@ -1,7 +1,7 @@
 <!--<div id="/module/texts/list/template.html">-->
-  <!--<div ng-if="!textsList.showSearch" ng-include="'/module/texts/list/template.html#defaultToolbar'"></div>-->
-  <!--<div ng-if="textsList.showSearch" ng-include="'/module/texts/list/template.html#searchToolbar'"></div>-->
-  <!--<div ng-include="'/module/texts/list/template.html#content'"></div>-->
+<!--<div ng-if="!textsList.showSearch" ng-include="'/module/texts/list/template.html#defaultToolbar'"></div>-->
+<!--<div ng-if="textsList.showSearch" ng-include="'/module/texts/list/template.html#searchToolbar'"></div>-->
+<!--<div ng-include="'/module/texts/list/template.html#content'"></div>-->
 <!--</div>-->
 
 <div ng-if="!textsList.showSearch" ng-include="'/module/texts/list/template.html#defaultToolbar'"></div>
@@ -28,15 +28,17 @@
         <md-icon md-svg-icon="general-menu"></md-icon>
       </md-button>
 
-      <span flex></span>
-
       <md-button ng-click="app.navigateTo('texts.add')" class="md-icon-button" aria-label="Add">
         <md-icon md-svg-icon="general-add"></md-icon>
       </md-button>
 
+      <span flex></span>
+
       <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Search">
         <md-icon md-svg-icon="general-search"></md-icon>
       </md-button>
+
+      <div ng-include="'/module/texts/list/template.html#orderBy'"></div>
     </div>
   </md-toolbar>
 </script>
@@ -97,6 +99,34 @@
         <md-button ng-click="texts.delete(text.id)">
           <md-icon md-svg-icon="general-delete"></md-icon>
           Delete
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</script>
+
+<script type="text/ng-template" id="/module/texts/list/template.html#orderBy">
+  <md-menu>
+    <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="More Actions">
+      <md-icon md-menu-origin md-svg-icon="general-more_vert"></md-icon>
+    </md-button>
+    <md-menu-content width="2">
+      <md-menu-item ng-class="{'textsList-currentOrder' : 'newest' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('newest')">
+          <md-icon md-svg-icon="sort_by-upward"></md-icon>
+          <span>Newest first</span>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item ng-class="{'textsList-currentOrder' : 'oldest' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('oldest')">
+          <md-icon md-svg-icon="sort_by-downward"></md-icon>
+          <span>Older first</span>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item ng-class="{'textsList-currentOrder' : 'alfabet' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('alfabet')">
+          <md-icon md-svg-icon="sort_by-alpha" md-menu-align-target></md-icon>
+          <span>Alfabet</span>
         </md-button>
       </md-menu-item>
     </md-menu-content>

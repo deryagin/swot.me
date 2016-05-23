@@ -7,7 +7,15 @@ define([
 
     TextsListController.$inject = [];
 
-    this.textList = [
+    var self = this;
+
+    self.currentOrder = 'newest';
+
+    self.orderBy = function orderBy(selectedOrder) {
+      self.currentOrder = selectedOrder;
+    };
+
+    self.textList = [
       {
         id: 11111,
         name: 'Criminal Minds - 1x02'
