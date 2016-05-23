@@ -1,4 +1,4 @@
-md-autocomplete > md-autocomplete-wrap > md-progress-linear {
+#textsList-searchInput md-progress-linear {
   display: none;
 }
 
