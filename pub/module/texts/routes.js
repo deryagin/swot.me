@@ -33,13 +33,13 @@ define([
       }
     });
 
-    $stateProvider.state('texts.add', {
-      url: '/add',
+    $stateProvider.state('texts.create', {
+      url: '/create',
       views: {
         'texts.content@texts': {
-          templateUrl: '/module/texts/add/template.html',
-          controller: 'TextsAddController',
-          controllerAs: 'textsAdd'
+          templateUrl: '/module/texts/create/template.html',
+          controller: 'TextsCreateController',
+          controllerAs: 'textsCreate'
         }
       }
     });

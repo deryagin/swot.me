@@ -8,7 +8,7 @@
       <md-header>New Text</md-header>
     </div>
 
-    <md-tabs md-selected="textsAdd.tabIndex" class="md-primary">
+    <md-tabs md-selected="textsCreate.tabIndex" class="md-primary">
       <md-tab>Add File</md-tab>
       <md-tab>Copy In</md-tab>
       <md-tab>Add Url</md-tab>
@@ -16,13 +16,13 @@
   </md-toolbar>
 
   <md-content flex md-scroll-y>
-    <div ng-if="0 == textsAdd.tabIndex" ng-include="'/module/texts/add/template.html#byFile'"></div>
-    <div ng-if="1 == textsAdd.tabIndex" ng-include="'/module/texts/add/template.html#byCopy'"></div>
-    <div ng-if="2 == textsAdd.tabIndex" ng-include="'/module/texts/add/template.html#byUrl'"></div>
+    <div ng-if="0 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#byFile'"></div>
+    <div ng-if="1 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#byCopy'"></div>
+    <div ng-if="2 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#byUrl'"></div>
   </md-content>
 </div>
 
-<script type="text/ng-template" id="/module/texts/add/template.html#byFile">
+<script type="text/ng-template" id="/module/texts/create/template.html#byFile">
   <div layout="row" layout-align="center center" layout-padding>
     <md-card flex-gt-sm="90" flex-gt-md="80">
       <md-card-content>
@@ -32,18 +32,18 @@
   </div>
 </script>
 
-<script type="text/ng-template" id="/module/texts/add/template.html#byCopy">
+<script type="text/ng-template" id="/module/texts/create/template.html#byCopy">
   <div layout="row" layout-align="center center" layout-padding>
     <md-card flex-gt-md="80" layout-fill>
       <md-card-content>
-        <form name="copyInForm" ng-submit="textsAdd.copyIn()">
+        <form name="copyInForm" ng-submit="textsCreate.copyIn()">
           <md-input-container class="md-block">
             <label>Title</label>
-            <input id="title" ng-model="textsAdd.title" type="text" maxlength="255" required>
+            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255" required>
           </md-input-container>
           <md-input-container class="md-block">
             <label>Content</label>
-            <textarea id="content" ng-model="textsAdd.content" rows="5" required></textarea>
+            <textarea id="content" ng-model="textsCreate.content" rows="5" required></textarea>
           </md-input-container>
           <div layout="row" layout-align="end">
             <md-button type="submit" class="md-primary" ng-class="{'md-raised md-hue-2' : copyInForm.$valid}"> Add </md-button>
@@ -55,7 +55,7 @@
   </div>
 </script>
 
-<script type="text/ng-template" id="/module/texts/add/template.html#byUrl">
+<script type="text/ng-template" id="/module/texts/create/template.html#byUrl">
   <div layout="row" layout-align="center center" layout-padding>
     <md-card flex-gt-sm="90" flex-gt-md="80">
       <md-card-content>
