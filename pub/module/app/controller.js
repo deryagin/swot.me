@@ -9,8 +9,8 @@ define([
 
     var self = this;
 
-    self.navigateTo = function navigateTo(stateName) {
-      $state.go(stateName);
+    self.navigateTo = function navigateTo(stateName, params) {
+      $state.go(stateName, params);
     };
   }
 });

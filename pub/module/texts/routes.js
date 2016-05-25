@@ -37,9 +37,16 @@ define([
       url: '/create',
       views: {
         'texts.content@texts': {
-          templateUrl: '/module/texts/create/template.html',
-          controller: 'TextsCreateController',
-          controllerAs: 'textsCreate'
+          templateUrl: '/module/texts/create/template.html'
+        }
+      }
+    });
+
+    $stateProvider.state('texts.read', {
+      url: '/read/:id',
+      views: {
+        'texts.content@texts': {
+          templateUrl: '/module/texts/read/template.html'
         }
       }
     });

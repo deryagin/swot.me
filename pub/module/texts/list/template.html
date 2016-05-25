@@ -12,7 +12,7 @@
       <md-divider></md-divider>
       <md-list-item
         ng-repeat="text in textsList.textList"
-        ng-click="app.navigateTo(text.id)">
+        ng-click="app.navigateTo('texts.read', {id: text.id})">
         <p>{{text.name}}</p>
         <div ng-include="'/module/texts/list/template.html#submenu'"></div>
         <md-divider></md-divider>
@@ -96,7 +96,7 @@
         </md-button>
       </md-menu-item>
       <md-menu-item>
-        <md-button ng-click="texts.delete(text.id)">
+        <md-button ng-click="texts.remove(text.id)">
           <md-icon md-svg-icon="general-delete"></md-icon>
           Delete
         </md-button>
