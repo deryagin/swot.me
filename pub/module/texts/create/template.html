@@ -46,7 +46,13 @@
             <textarea id="content" ng-model="textsCreate.content" rows="5" required></textarea>
           </md-input-container>
           <div layout="row" layout-align="end">
-            <md-button type="submit" class="md-primary" ng-class="{'md-raised md-hue-2' : copyInForm.$valid}"> Add </md-button>
+            <md-button
+              type="submit"
+              class="md-primary"
+              ng-disabled="copyInForm.$pristine || (copyInForm.$dirty && copyInForm.$invalid)"
+              ng-class="{'md-raised md-hue-2' : (copyInForm.$dirty && copyInForm.$valid)}">
+              Add
+            </md-button>
             <md-button type="reset" class="md-primary"> Reset </md-button>
           </div>
         </form>
