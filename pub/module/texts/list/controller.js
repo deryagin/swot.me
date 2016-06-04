@@ -3,47 +3,46 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsListController() {
+  return function TextsListController($mdDialog, TextsService) {
 
-    TextsListController.$inject = [];
+    TextsListController.$inject = ['$mdDialog', 'TextsService'];
 
     var self = this;
 
+    self.textList = TextsService.list();
+
     self.currentOrder = 'newest';
+
+    self.rename = function rename(textId) {
+      var text = TextsService.findOne(textId);
+      var confirm = $mdDialog.prompt()
+        .title('Enter new name:')
+        .placeholder(text.name)
+        .ariaLabel('Text Rename')
+        .ok('Ok')
+        .cancel('Cancel');
+      $mdDialog.show(confirm).then(function (newName) {
+        if (newName) {
+          TextsService.update({ id: textId, name: newName});
+        }
+      });
+    };
+
+    self.remove = function remove(textId) {
+      var text = TextsService.findOne(textId);
+      var confirmDialog = $mdDialog.confirm()
+        .title('Would you like to delete:')
+        .textContent(text.name)
+        .ariaLabel('Text Delete')
+        .ok('Ok')
+        .cancel('Cancel');
+      $mdDialog.show(confirmDialog).then(function () {
+        TextsService.delete(textId);
+      });
+    };
 
     self.orderBy = function orderBy(selectedOrder) {
       self.currentOrder = selectedOrder;
     };
-
-    self.textList = [
-      {
-        id: 11111,
-        name: 'Criminal Minds - 1x02'
-      },
-      {
-        id: 22222,
-        name: 'Avatar (2009).TS.ViSiON.en'
-      },
-      {
-        id: 33333,
-        name: 'Criminal Minds - 1x01 - Extreme Aggressor.en'
-      },
-      {
-        id: 44444,
-        name: 'Criminal Minds - 1x01'
-      },
-      {
-        id: 55555,
-        name: 'The.Passionate.Programmer.May.2009'
-      },
-      {
-        id: 66666,
-        name: 'In Treatment - 1x02 - Alex - Week One.0TV.en'
-      },
-      {
-        id: 77777,
-        name: 'In Treatment - 1x01 - Laura - Week One.2HD.en'
-      }
-    ];
   };
 });
