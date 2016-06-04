@@ -12,31 +12,31 @@ define([
     self.textList = [
       {
         id: 11111,
-        name: 'Criminal Minds - 1x02'
+        title: 'Criminal Minds - 1x02'
       },
       {
         id: 22222,
-        name: 'Avatar (2009).TS.ViSiON.en'
+        title: 'Avatar (2009).TS.ViSiON.en'
       },
       {
         id: 33333,
-        name: 'Criminal Minds - 1x01 - Extreme Aggressor.en'
+        title: 'Criminal Minds - 1x01 - Extreme Aggressor.en'
       },
       {
         id: 44444,
-        name: 'Criminal Minds - 1x01'
+        title: 'Criminal Minds - 1x01'
       },
       {
         id: 55555,
-        name: 'The.Passionate.Programmer.May.2009'
+        title: 'The.Passionate.Programmer.May.2009'
       },
       {
         id: 66666,
-        name: 'In Treatment - 1x02 - Alex - Week One.0TV.en'
+        title: 'In Treatment - 1x02 - Alex - Week One.0TV.en'
       },
       {
         id: 77777,
-        name: 'In Treatment - 1x01 - Laura - Week One.2HD.en'
+        title: 'In Treatment - 1x01 - Laura - Week One.2HD.en'
       }
     ];
 
@@ -50,7 +50,7 @@ define([
 
     self.update = function update(props) {
       var text = self.findOne(props.id);
-      text.name = props.name;
+      text.title = props.title;
     };
 
     self.delete = function remove(id) {

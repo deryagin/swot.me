@@ -15,27 +15,17 @@ define([
 
     self.rename = function rename(textId) {
       var text = TextsService.findOne(textId);
-      var confirm = $mdDialog.prompt()
-        .title('Enter new name:')
-        .placeholder(text.name)
-        .ariaLabel('Text Rename')
-        .ok('Ok')
-        .cancel('Cancel');
-      $mdDialog.show(confirm).then(function (newName) {
-        if (newName) {
-          TextsService.update({ id: textId, name: newName});
+      var confirmDialog = buildRenameDialog(text);
+      $mdDialog.show(confirmDialog).then(function (newTitle) {
+        if (newTitle) {
+          TextsService.update({ id: textId, title: newTitle});
         }
       });
     };
 
     self.remove = function remove(textId) {
       var text = TextsService.findOne(textId);
-      var confirmDialog = $mdDialog.confirm()
-        .title('Would you like to delete:')
-        .textContent(text.name)
-        .ariaLabel('Text Delete')
-        .ok('Ok')
-        .cancel('Cancel');
+      var confirmDialog = buildRemoveModal(text);
       $mdDialog.show(confirmDialog).then(function () {
         TextsService.delete(textId);
       });
@@ -44,5 +34,23 @@ define([
     self.orderBy = function orderBy(selectedOrder) {
       self.currentOrder = selectedOrder;
     };
+
+    function buildRenameDialog(text) {
+      return $mdDialog.prompt()
+        .title('Enter new name:')
+        .placeholder(text.title)
+        .ariaLabel('Text Rename')
+        .ok('Ok')
+        .cancel('Cancel');
+    }
+
+    function buildRemoveModal(text) {
+      return $mdDialog.confirm()
+        .title('Would you like to delete:')
+        .textContent(text.title)
+        .ariaLabel('Text Delete')
+        .ok('Ok')
+        .cancel('Cancel');
+    }
   };
 });

@@ -13,7 +13,7 @@
       <md-list-item
         ng-repeat="text in textsList.textList"
         ng-click="app.navigateTo('texts.read', {id: text.id})">
-        <p>{{text.name}}</p>
+        <p>{{text.title}}</p>
         <div ng-include="'/module/texts/list/template.html#submenu'"></div>
         <md-divider></md-divider>
       </md-list-item>
@@ -74,7 +74,7 @@
         <md-list-item
           ng-repeat="text in textsList.textList"
           ng-click="app.navigateTo(text.id)">
-          <p>{{text.name}}</p>
+          <p>{{text.title}}</p>
           <div ng-include="'/module/texts/list/template.html#submenu'"></div>
           <md-divider></md-divider>
         </md-list-item>
