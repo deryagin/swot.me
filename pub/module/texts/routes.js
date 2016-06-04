@@ -37,7 +37,9 @@ define([
       url: '/create',
       views: {
         'texts.content@texts': {
-          templateUrl: '/module/texts/create/template.html'
+          templateUrl: '/module/texts/create/template.html',
+          controller: 'TextsCreateController',
+          controllerAs: 'textsCreate'
         }
       }
     });

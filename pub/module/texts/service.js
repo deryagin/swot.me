@@ -40,8 +40,10 @@ define([
       }
     ];
 
-    self.create = function create() {
-
+    self.create = function create(text) {
+      text.id = Math.round(Math.random() * 1000000);
+      self.textList.push(text);
+      return true;
     };
 
     self.read = function read(id) {
