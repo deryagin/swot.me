@@ -123,6 +123,18 @@
           <span>Older first</span>
         </md-button>
       </md-menu-item>
+      <md-menu-item ng-class="{'textsList-currentOrder' : 'studied' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('studied')">
+          <md-icon md-svg-icon="sort_by-most_studied" md-menu-align-target></md-icon>
+          <span>Most studied</span>
+        </md-button>
+      </md-menu-item>
+      <md-menu-item ng-class="{'textsList-currentOrder' : 'activity' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('activity')">
+          <md-icon md-svg-icon="sort_by-access_time" md-menu-align-target></md-icon>
+          <span>Last activity</span>
+        </md-button>
+      </md-menu-item>
       <md-menu-item ng-class="{'textsList-currentOrder' : 'alfabet' === textsList.currentOrder}">
         <md-button ng-click="textsList.orderBy('alfabet')">
           <md-icon md-svg-icon="sort_by-alpha" md-menu-align-target></md-icon>
