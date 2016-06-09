@@ -11,7 +11,7 @@
     <md-list>
       <md-divider></md-divider>
       <md-list-item
-        ng-repeat="text in textsList.textList | filter:textsList.searchText"
+        ng-repeat="text in textsList.textList | filter:textsList.searchText | orderBy:textsList.currentOrder"
         ng-click="app.navigateTo('texts.read', {id: text.id})">
         <p>{{text.title}}</p>
         <div ng-include="'/module/texts/list/template.html#submenu'"></div>
@@ -104,14 +104,14 @@
       <md-icon md-menu-origin md-svg-icon="general-more_vert"></md-icon>
     </md-button>
     <md-menu-content width="2">
-      <md-menu-item ng-class="{'textsList-currentOrder' : 'newest' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('newest')">
+      <md-menu-item ng-class="{'textsList-currentOrder' : '+createdAt' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('+createdAt')">
           <md-icon md-svg-icon="sort_by-upward"></md-icon>
           <span>Newest first</span>
         </md-button>
       </md-menu-item>
-      <md-menu-item ng-class="{'textsList-currentOrder' : 'oldest' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('oldest')">
+      <md-menu-item ng-class="{'textsList-currentOrder' : '-createdAt' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('-createdAt')">
           <md-icon md-svg-icon="sort_by-downward"></md-icon>
           <span>Older first</span>
         </md-button>
@@ -122,14 +122,14 @@
           <span>Most studied</span>
         </md-button>
       </md-menu-item>
-      <md-menu-item ng-class="{'textsList-currentOrder' : 'activity' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('activity')">
+      <md-menu-item ng-class="{'textsList-currentOrder' : '+accessedAt' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('+accessedAt')">
           <md-icon md-svg-icon="sort_by-access_time" md-menu-align-target></md-icon>
           <span>Last activity</span>
         </md-button>
       </md-menu-item>
-      <md-menu-item ng-class="{'textsList-currentOrder' : 'alfabet' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('alfabet')">
+      <md-menu-item ng-class="{'textsList-currentOrder' : '+title' === textsList.currentOrder}">
+        <md-button ng-click="textsList.orderBy('+title')">
           <md-icon md-svg-icon="sort_by-alpha" md-menu-align-target></md-icon>
           <span>Alfabet</span>
         </md-button>

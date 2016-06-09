@@ -11,13 +11,13 @@ define([
 
     self.textList = TextsService.list();
 
-    self.currentOrder = 'newest';
+    self.currentOrder = '+createdAt';
 
     self.rename = function rename(textId) {
       var text = TextsService.findOne(textId);
       var confirmDialog = buildRenameDialog(text);
       $mdDialog.show(confirmDialog).then(function (newTitle) {
-        if (newTitle) {
+        if (newTitle && newTitle !== text.title) {
           TextsService.update({ id: textId, title: newTitle});
         }
       });
