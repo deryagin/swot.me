@@ -24,9 +24,28 @@
 
 <script type="text/ng-template" id="/module/texts/create/template.html#byFile">
   <div layout="row" layout-align="center center" layout-padding>
-    <md-card flex-gt-sm="90" flex-gt-md="80">
+    <md-card flex-gt-md="80">
       <md-card-content>
-        <h2>Add File</h2>
+        <form name="addFileForm" ng-submit="textsCreate.addFile()">
+          <md-input-container class="md-block">
+            <label>Title</label>
+            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
+          </md-input-container>
+          <div layout="column">
+            <input class="ng-hide" id="input-file-id" multiple type="file"/>
+            <label flex="50" for="input-file-id" class="md-button md-raised md-default-theme md-ink-ripple">Choose Files</label>
+          </div>
+          <div layout="row" layout-align="end">
+            <md-button
+              type="submit"
+              class="md-primary"
+              ng-disabled="addFileForm.$pristine || (addFileForm.$dirty && addFileForm.$invalid)"
+              ng-class="{'md-raised md-hue-2' : (addFileForm.$dirty && addFileForm.$valid)}">
+              Add
+            </md-button>
+            <md-button type="reset" class="md-primary">Reset</md-button>
+          </div>
+        </form>
       </md-card-content>
     </md-card>
   </div>
@@ -36,10 +55,10 @@
   <div layout="row" layout-align="center center" layout-padding>
     <md-card flex-gt-md="80" layout-fill>
       <md-card-content>
-        <form name="copyInForm" ng-submit="textsCreate.createByCopyIn()">
+        <form name="copyInForm" ng-submit="textsCreate.copyIn()">
           <md-input-container class="md-block">
             <label>Title</label>
-            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255" required>
+            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
           </md-input-container>
           <md-input-container class="md-block">
             <label>Content</label>
@@ -53,7 +72,7 @@
               ng-class="{'md-raised md-hue-2' : (copyInForm.$dirty && copyInForm.$valid)}">
               Add
             </md-button>
-            <md-button type="reset" class="md-primary"> Reset </md-button>
+            <md-button type="reset" class="md-primary">Reset</md-button>
           </div>
         </form>
       </md-card-content>
@@ -63,9 +82,31 @@
 
 <script type="text/ng-template" id="/module/texts/create/template.html#byUrl">
   <div layout="row" layout-align="center center" layout-padding>
-    <md-card flex-gt-sm="90" flex-gt-md="80">
+    <md-card flex-gt-md="80">
       <md-card-content>
-        <h2>Add URL</h2>
+        <form name="addUrlForm" ng-submit="textsCreate.addUrl()">
+          <md-input-container class="md-block">
+            <label>Title</label>
+            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>URL</label>
+            <input name="url" ng-model="textsCreate.url" type="text" required>
+            <div ng-messages="addUrlForm.url.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <div layout="row" layout-align="end">
+            <md-button
+              type="submit"
+              class="md-primary"
+              ng-disabled="addUrlForm.$pristine || (addUrlForm.$dirty && addUrlForm.$invalid)"
+              ng-class="{'md-raised md-hue-2' : (addUrlForm.$dirty && addUrlForm.$valid)}">
+              Add
+            </md-button>
+            <md-button type="reset" class="md-primary">Reset</md-button>
+          </div>
+        </form>
       </md-card-content>
     </md-card>
   </div>
