@@ -12,6 +12,8 @@ define([
     self.textList = TextsService.list();
 
     self.currentOrder = '+createdAt';
+    
+    self.showSearch = false;
 
     self.rename = function rename(textId) {
       var text = TextsService.findOne(textId);

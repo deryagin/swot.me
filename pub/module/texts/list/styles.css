@@ -1,12 +1,3 @@
-#textsList-searchInput md-progress-linear {
-  display: none;
-}
-
-.no-animate {
-  -webkit-transition: none !important;
-  transition: none !important;
-}
-
 .textsList-currentOrder md-icon {
   color: black;
 }

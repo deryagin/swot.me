@@ -1,12 +1,53 @@
-<!--<div id="/module/texts/list/template.html">-->
-<!--<div ng-if="!textsList.showSearch" ng-include="'/module/texts/list/template.html#defaultToolbar'"></div>-->
-<!--<div ng-if="textsList.showSearch" ng-include="'/module/texts/list/template.html#searchToolbar'"></div>-->
-<!--<div ng-include="'/module/texts/list/template.html#content'"></div>-->
-<!--</div>-->
+<div data-template="/module/texts/list/template.html" layout="column" flex>
+  <md-toolbar
+    ng-if="!textsList.showSearch"
+    ng-include="'/module/texts/list/template.html#defaultToolbar'">
+  </md-toolbar>
+  <md-toolbar
+    ng-if="textsList.showSearch"
+    ng-include="'/module/texts/list/template.html#searchToolbar'">
+  </md-toolbar>
+  <md-content
+    md-scroll-y
+    ng-include="'/module/texts/list/template.html#textList'">
+  </md-content>
+</div>
 
-<div ng-if="!textsList.showSearch" ng-include="'/module/texts/list/template.html#defaultToolbar'"></div>
-<div ng-if="textsList.showSearch" ng-include="'/module/texts/list/template.html#searchToolbar'"></div>
-<md-content layout="column" flex md-scroll-y>
+<script type="text/ng-template" id="/module/texts/list/template.html#defaultToolbar">
+  <div class="md-toolbar-tools">
+    <md-button ng-click="$root.sidenav.toggle()" class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
+      <md-icon md-svg-icon="general-menu"></md-icon>
+    </md-button>
+
+    <h1 flex>Text List</h1>
+
+    <md-button ng-click="app.navigateTo('texts.create')" class="md-icon-button" aria-label="Add">
+      <md-icon md-svg-icon="general-add"></md-icon>
+    </md-button>
+
+    <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Search">
+      <md-icon md-svg-icon="general-search"></md-icon>
+    </md-button>
+
+    <div ng-include="'/module/texts/list/template.html#orderBy'"></div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="/module/texts/list/template.html#searchToolbar">
+  <div class="md-toolbar-tools">
+    <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Close Search">
+      <md-icon md-svg-icon="general-close"></md-icon>
+    </md-button>
+
+    <input flex type="search" ng-model="textsList.searchText" class="textsList-searchText" placeholder="Search" aria-label="Search">
+
+    <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Toggle Search">
+      <md-icon md-svg-icon="general-search"></md-icon>
+    </md-button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="/module/texts/list/template.html#textList">
   <md-card>
     <md-list>
       <md-divider></md-divider>
@@ -19,61 +60,6 @@
       </md-list-item>
     </md-list>
   </md-card>
-</md-content>
-
-<script type="text/ng-template" id="/module/texts/list/template.html#defaultToolbar">
-  <md-toolbar class="md-whiteframe-glow-z1 no-animate" ng-show="!textsList.showSearch">
-    <div class="md-toolbar-tools">
-      <md-button ng-click="$root.sidenav.toggle()" class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
-        <md-icon md-svg-icon="general-menu"></md-icon>
-      </md-button>
-
-      <h1 flex>Text List</h1>
-
-      <md-button ng-click="app.navigateTo('texts.create')" class="md-icon-button" aria-label="Add">
-        <md-icon md-svg-icon="general-add"></md-icon>
-      </md-button>
-
-      <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Search">
-        <md-icon md-svg-icon="general-search"></md-icon>
-      </md-button>
-
-      <div ng-include="'/module/texts/list/template.html#orderBy'"></div>
-    </div>
-  </md-toolbar>
-</script>
-
-<script type="text/ng-template" id="/module/texts/list/template.html#searchToolbar">
-  <md-toolbar class="md-whiteframe-glow-z1 no-animate" ng-show="textsList.showSearch">
-    <div class="md-toolbar-tools">
-      <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Close Search">
-        <md-icon md-svg-icon="general-close"></md-icon>
-      </md-button>
-
-      <input flex type="search" ng-model="textsList.searchText" class="textsList-searchText" placeholder="Search" aria-label="Search">
-
-      <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Toggle Search">
-        <md-icon md-svg-icon="general-search"></md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
-</script>
-
-<script type="text/ng-template" id="/module/texts/list/template.html#content">
-  <md-content layout="column" flex md-scroll-y>
-    <md-card>
-      <md-list>
-        <md-divider></md-divider>
-        <md-list-item
-          ng-repeat="text in textsList.textList"
-          ng-click="app.navigateTo(text.id)">
-          <p>{{text.title}}</p>
-          <div ng-include="'/module/texts/list/template.html#submenu'"></div>
-          <md-divider></md-divider>
-        </md-list-item>
-      </md-list>
-    </md-card>
-  </md-content>
 </script>
 
 <script type="text/ng-template" id="/module/texts/list/template.html#submenu">
