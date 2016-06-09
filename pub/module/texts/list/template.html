@@ -11,7 +11,7 @@
     <md-list>
       <md-divider></md-divider>
       <md-list-item
-        ng-repeat="text in textsList.textList"
+        ng-repeat="text in textsList.textList | filter:textsList.searchText"
         ng-click="app.navigateTo('texts.read', {id: text.id})">
         <p>{{text.title}}</p>
         <div ng-include="'/module/texts/list/template.html#submenu'"></div>
@@ -50,14 +50,7 @@
         <md-icon md-svg-icon="general-close"></md-icon>
       </md-button>
 
-      <md-autocomplete
-        id="textsList-searchInput" flex
-        md-items="[]"
-        md-no-progress
-        md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-        md-search-text="ctrl.searchText"
-        placeholder="Search">
-      </md-autocomplete>
+      <input flex type="search" ng-model="textsList.searchText" class="textsList-searchText" placeholder="Search" aria-label="Search">
 
       <md-button ng-click="textsList.showSearch = !textsList.showSearch" class="md-icon-button" aria-label="Toggle Search">
         <md-icon md-svg-icon="general-search"></md-icon>

@@ -14,3 +14,15 @@
 .textsList-currentOrder span {
   font-weight: bold;
 }
+
+.textsList-searchText {
+  font-size: 14px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  padding: 0 15px;
+  line-height: 40px;
+  height: 40px;
+  background-color: white;
+}
