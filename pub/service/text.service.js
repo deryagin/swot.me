@@ -9,7 +9,7 @@ define([
 
     var self = this;
 
-    self.textList = [
+    self.collection = [
       {
         id: 11111,
         title: 'Criminal Minds - 1x02',
@@ -58,12 +58,17 @@ define([
       text.id = Math.round(Math.random() * 1000000);
       text.createdAt = new Date();
       text.accessedAt = new Date();
-      self.textList.push(text);
+      self.collection.push(text);
       return true;
     };
 
     self.read = function read(id) {
-
+      return {
+        id: 77777,
+        title: 'In Treatment - 1x01 - Laura - Week One.2HD.en',
+        createdAt: '2016-12-09T09:31:55.362Z',
+        accessedAt: '2016-06-06T10:31:55.362Z'
+      };
     };
 
     self.update = function update(props) {
@@ -73,16 +78,16 @@ define([
 
     self.delete = function remove(id) {
       var text = self.findOne(id);
-      var index = self.textList.indexOf(text);
-      self.textList.splice(index, 1);
+      var index = self.collection.indexOf(text);
+      self.collection.splice(index, 1);
     };
 
     self.list = function list() {
-      return self.textList;
+      return self.collection;
     };
 
     self.findOne = function findOne(textId) {
-      return self.textList.find(function (text) {
+      return self.collection.find(function (text) {
         return text.id === textId;
       });
     };

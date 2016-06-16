@@ -52,7 +52,7 @@
     <md-list>
       <md-divider></md-divider>
       <md-list-item
-        ng-repeat="text in textList.textList | filter:textList.searchText | orderBy:textList.currentOrder"
+        ng-repeat="text in textList.collection | filter:textList.searchText | orderBy:textList.currentOrder"
         ng-click="app.navigateTo('text.read', {id: text.id})">
         <p>{{text.title}}</p>
         <div ng-include="'/module/text/list/template.html#submenu'"></div>

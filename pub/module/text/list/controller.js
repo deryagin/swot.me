@@ -9,7 +9,7 @@ define([
 
     var self = this;
 
-    self.textList = TextService.list();
+    self.collection = TextService.list();
 
     self.currentOrder = '+createdAt';
     
