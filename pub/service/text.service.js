@@ -56,6 +56,8 @@ define([
 
     self.create = function create(text) {
       text.id = Math.round(Math.random() * 1000000);
+      text.createdAt = new Date();
+      text.accessedAt = new Date();
       self.textList.push(text);
       return true;
     };

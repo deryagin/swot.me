@@ -13,11 +13,7 @@ define([
 
     self.content = '';
 
-    self.createByCopyIn = function createByCopyIn() {
-
-      if (!self.title || ! self.content) {
-        return;
-      }
+    self.copyIn = function copyIn() {
 
       var created = TextService.create({
         title: self.title,
