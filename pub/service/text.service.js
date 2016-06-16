@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsService() {
+  return function TextService() {
 
-    TextsService.$inject = [];
+    TextService.$inject = [];
 
     var self = this;
 

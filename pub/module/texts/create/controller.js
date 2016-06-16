@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsCreateController($state, TextsService) {
+  return function TextsCreateController($state, TextService) {
 
-    TextsCreateController.$inject = ['$state', 'TextsService'];
+    TextsCreateController.$inject = ['$state', 'TextService'];
 
     var self = this;
 
@@ -19,7 +19,7 @@ define([
         return;
       }
 
-      var created = TextsService.create({
+      var created = TextService.create({
         title: self.title,
         content: self.content
       });

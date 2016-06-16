@@ -3,33 +3,33 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsListController($mdDialog, TextsService) {
+  return function TextsListController($mdDialog, TextService) {
 
-    TextsListController.$inject = ['$mdDialog', 'TextsService'];
+    TextsListController.$inject = ['$mdDialog', 'TextService'];
 
     var self = this;
 
-    self.textList = TextsService.list();
+    self.textList = TextService.list();
 
     self.currentOrder = '+createdAt';
     
     self.showSearch = false;
 
     self.rename = function rename(textId) {
-      var text = TextsService.findOne(textId);
+      var text = TextService.findOne(textId);
       var confirmDialog = buildRenameDialog(text);
       $mdDialog.show(confirmDialog).then(function (newTitle) {
         if (newTitle && newTitle !== text.title) {
-          TextsService.update({ id: textId, title: newTitle});
+          TextService.update({ id: textId, title: newTitle});
         }
       });
     };
 
     self.remove = function remove(textId) {
-      var text = TextsService.findOne(textId);
+      var text = TextService.findOne(textId);
       var confirmDialog = buildRemoveModal(text);
       $mdDialog.show(confirmDialog).then(function () {
-        TextsService.delete(textId);
+        TextService.delete(textId);
       });
     };
 
