@@ -33,7 +33,7 @@ define([
       });
     };
 
-    self.orderBy = function orderBy(selectedOrder) {
+    self.sortBy = function orderBy(selectedOrder) {
       self.currentOrder = selectedOrder;
     };
 

@@ -29,7 +29,7 @@
       <md-icon md-svg-icon="general-search"></md-icon>
     </md-button>
 
-    <div ng-include="'/module/texts/list/template.html#orderBy'"></div>
+    <div ng-include="'/module/texts/list/template.html#sortBy'"></div>
   </div>
 </script>
 
@@ -84,39 +84,39 @@
   </md-menu>
 </script>
 
-<script type="text/ng-template" id="/module/texts/list/template.html#orderBy">
+<script type="text/ng-template" id="/module/texts/list/template.html#sortBy">
   <md-menu>
     <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="More Actions">
       <md-icon md-menu-origin md-svg-icon="general-more_vert"></md-icon>
     </md-button>
     <md-menu-content width="2">
       <md-menu-item ng-class="{'textsList-currentOrder' : '+createdAt' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('+createdAt')">
-          <md-icon md-svg-icon="sort_by-upward"></md-icon>
+        <md-button ng-click="textsList.sortBy('+createdAt')">
+          <md-icon md-svg-icon="text:sort_by-upward"></md-icon>
           <span>Newest first</span>
         </md-button>
       </md-menu-item>
       <md-menu-item ng-class="{'textsList-currentOrder' : '-createdAt' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('-createdAt')">
-          <md-icon md-svg-icon="sort_by-downward"></md-icon>
+        <md-button ng-click="textsList.sortBy('-createdAt')">
+          <md-icon md-svg-icon="text:sort_by-downward"></md-icon>
           <span>Older first</span>
         </md-button>
       </md-menu-item>
       <md-menu-item ng-class="{'textsList-currentOrder' : 'studied' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('studied')">
-          <md-icon md-svg-icon="sort_by-most_studied" md-menu-align-target></md-icon>
+        <md-button ng-click="textsList.sortBy('studied')">
+          <md-icon md-svg-icon="text:sort_by-most_studied" md-menu-align-target></md-icon>
           <span>Most studied</span>
         </md-button>
       </md-menu-item>
       <md-menu-item ng-class="{'textsList-currentOrder' : '+accessedAt' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('+accessedAt')">
-          <md-icon md-svg-icon="sort_by-access_time" md-menu-align-target></md-icon>
+        <md-button ng-click="textsList.sortBy('+accessedAt')">
+          <md-icon md-svg-icon="text:sort_by-access_time" md-menu-align-target></md-icon>
           <span>Last activity</span>
         </md-button>
       </md-menu-item>
       <md-menu-item ng-class="{'textsList-currentOrder' : '+title' === textsList.currentOrder}">
-        <md-button ng-click="textsList.orderBy('+title')">
-          <md-icon md-svg-icon="sort_by-alpha" md-menu-align-target></md-icon>
+        <md-button ng-click="textsList.sortBy('+title')">
+          <md-icon md-svg-icon="text:sort_by-alpha" md-menu-align-target></md-icon>
           <span>Alfabet</span>
         </md-button>
       </md-menu-item>
