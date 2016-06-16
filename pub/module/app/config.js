@@ -9,6 +9,6 @@ define([
 
     $locationProvider.hashPrefix('!');
 
-    $mdIconProvider.defaultIconSet('/resource/material-icons.svg', 24);
+    $mdIconProvider.defaultIconSet('/resource/general.icons.svg', 24);
   }
 });
