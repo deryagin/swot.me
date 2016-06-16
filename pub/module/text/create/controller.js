@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsCreateController($state, TextService) {
+  return function textCreateController($state, TextService) {
 
-    TextsCreateController.$inject = ['$state', 'TextService'];
+    textCreateController.$inject = ['$state', 'TextService'];
 
     var self = this;
 
@@ -25,7 +25,7 @@ define([
       });
 
       if (created) {
-        $state.go('texts.list')
+        $state.go('text.list')
       }
     }
   };

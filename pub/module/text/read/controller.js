@@ -3,7 +3,7 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsReadController() {
+  return function TextReadController() {
 
   };
 });

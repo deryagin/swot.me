@@ -8,7 +8,7 @@ define([
     'module/app/index',
     'module/sidenav/index',
     'module/start/index',
-    'module/texts/index',
+    'module/text/index',
     'module/words/index',
     'module/stats/index',
     'module/import/index',

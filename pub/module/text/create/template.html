@@ -1,14 +1,14 @@
 <div layout="column" flex>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button ng-click="app.navigateTo('texts.list')" class="md-icon-button" aria-label="Back">
+      <md-button ng-click="app.navigateTo('text.list')" class="md-icon-button" aria-label="Back">
         <md-icon md-svg-icon="general-arrow_back"></md-icon>
       </md-button>
 
       <h1>Add Text</h1>
     </div>
 
-    <md-tabs md-selected="textsCreate.tabIndex" class="md-primary">
+    <md-tabs md-selected="textCreate.tabIndex" class="md-primary">
       <md-tab>Add File</md-tab>
       <md-tab>Copy In</md-tab>
       <md-tab>Add Url</md-tab>
@@ -16,20 +16,20 @@
   </md-toolbar>
 
   <md-content md-scroll-y>
-    <div ng-if="0 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#addFile'"></div>
-    <div ng-if="1 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#copyIn'"></div>
-    <div ng-if="2 == textsCreate.tabIndex" ng-include="'/module/texts/create/template.html#addUrl'"></div>
+    <div ng-if="0 == textCreate.tabIndex" ng-include="'/module/text/create/template.html#addFile'"></div>
+    <div ng-if="1 == textCreate.tabIndex" ng-include="'/module/text/create/template.html#copyIn'"></div>
+    <div ng-if="2 == textCreate.tabIndex" ng-include="'/module/text/create/template.html#addUrl'"></div>
   </md-content>
 </div>
 
-<script type="text/ng-template" id="/module/texts/create/template.html#addFile">
+<script type="text/ng-template" id="/module/text/create/template.html#addFile">
   <div layout="row" layout-align="center" layout-padding>
     <md-card layout-fill flex-gt-md="80">
       <md-card-content>
-        <form name="addFileForm" ng-submit="textsCreate.addFile()">
+        <form name="addFileForm" ng-submit="textCreate.addFile()">
           <md-input-container class="md-block">
             <label>Title</label>
-            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
+            <input id="title" ng-model="textCreate.title" type="text" maxlength="255">
           </md-input-container>
           <div layout="column">
             <input class="ng-hide" id="input-file-id" multiple type="file"/>
@@ -51,18 +51,18 @@
   </div>
 </script>
 
-<script type="text/ng-template" id="/module/texts/create/template.html#copyIn">
+<script type="text/ng-template" id="/module/text/create/template.html#copyIn">
   <div layout="row" layout-align="center" layout-padding>
     <md-card layout-fill flex-gt-md="80">
       <md-card-content>
-        <form name="copyInForm" ng-submit="textsCreate.copyIn()">
+        <form name="copyInForm" ng-submit="textCreate.copyIn()">
           <md-input-container class="md-block">
             <label>Title</label>
-            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
+            <input id="title" ng-model="textCreate.title" type="text" maxlength="255">
           </md-input-container>
           <md-input-container class="md-block">
             <label>Content</label>
-            <textarea id="content" ng-model="textsCreate.content" rows="3" required></textarea>
+            <textarea id="content" ng-model="textCreate.content" rows="3" required></textarea>
           </md-input-container>
           <div layout="row" layout-align="end">
             <md-button
@@ -80,18 +80,18 @@
   </div>
 </script>
 
-<script type="text/ng-template" id="/module/texts/create/template.html#addUrl">
+<script type="text/ng-template" id="/module/text/create/template.html#addUrl">
   <div layout="row" layout-align="center" layout-padding>
     <md-card layout-fill flex-gt-md="80">
       <md-card-content>
-        <form name="addUrlForm" ng-submit="textsCreate.addUrl()">
+        <form name="addUrlForm" ng-submit="textCreate.addUrl()">
           <md-input-container class="md-block">
             <label>Title</label>
-            <input id="title" ng-model="textsCreate.title" type="text" maxlength="255">
+            <input id="title" ng-model="textCreate.title" type="text" maxlength="255">
           </md-input-container>
           <md-input-container class="md-block">
             <label>URL</label>
-            <input name="url" ng-model="textsCreate.url" type="text" required>
+            <input name="url" ng-model="textCreate.url" type="text" required>
             <div ng-messages="addUrlForm.url.$error">
               <div ng-message="required">This is required.</div>
             </div>

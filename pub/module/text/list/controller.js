@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextsListController($mdDialog, TextService) {
+  return function TextListController($mdDialog, TextService) {
 
-    TextsListController.$inject = ['$mdDialog', 'TextService'];
+    TextListController.$inject = ['$mdDialog', 'TextService'];
 
     var self = this;
 
