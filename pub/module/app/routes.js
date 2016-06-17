@@ -25,37 +25,39 @@ define([
             controllerAs: 'start'
           }
         }
-      })
-      // .state('texts', {
-      //   url: '/texts',
-      //   views: {
-      //     'sidenav': {
-      //       templateUrl: '/module/sidenav/template.html',
-      //       controller: 'SidenavController',
-      //       controllerAs: 'sidenav'
-      //     },
-      //     'content': {
-      //       templateUrl: '/module/texts/template.html',
-      //       controller: 'TextsController',
-      //       controllerAs: 'texts'
-      //     }
-      //   }
-      // })
-      .state('words', {
-        url: '/words',
-        views: {
-          'app.sidenav@': {
-            templateUrl: '/module/sidenav/template.html',
-            controller: 'SidenavController',
-            controllerAs: 'sidenav'
-          },
-          'app.content@': {
-            templateUrl: '/module/words/template.html',
-            controller: 'WordsController',
-            controllerAs: 'words'
-          }
-        }
       });
+
+    $stateProvider.state('words', {
+      url: '/words',
+      views: {
+        'app.sidenav@': {
+          templateUrl: '/module/sidenav/template.html',
+          controller: 'SidenavController',
+          controllerAs: 'sidenav'
+        },
+        'app.content@': {
+          templateUrl: '/module/words/template.html',
+          controller: 'WordsController',
+          controllerAs: 'words'
+        }
+      }
+    });
+
+    $stateProvider.state('register', {
+      url: '/register',
+      views: {
+        'app.sidenav@': {
+          templateUrl: '/module/sidenav/template.html',
+          controller: 'SidenavController',
+          controllerAs: 'sidenav'
+        },
+        'app.content@': {
+          templateUrl: '/module/register/template.html',
+          controller: 'RegisterController',
+          controllerAs: 'register'
+        }
+      }
+    });
   };
 
   // return [

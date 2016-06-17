@@ -9,11 +9,13 @@ define([
 
     var self = this;
 
-    self.currentContent = 'defaultMenu';
+    self.accountStates = ['register', 'login'];
 
     self.currentMenu = $state.$current.name.split('.')[0] || 'start';
 
-    self.toggleTemplate = function toggleTemplate() {
+    self.currentContent = (-1 === self.accountStates.indexOf(self.currentMenu) ? 'defaultMenu' : 'accountMenu');
+
+    self.toggleContent = function toggleContent() {
       self.currentContent = ('defaultMenu' === self.currentContent ? 'accountMenu' : 'defaultMenu');
     };
 

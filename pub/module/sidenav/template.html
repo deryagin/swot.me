@@ -25,7 +25,7 @@
     <md-icon md-svg-icon="sidenav:avatar" class="sidenav-avatar"></md-icon>
   </div>
   <div>
-    <md-list-item layout-fill ng-click="sidenav.toggleTemplate()">
+    <md-list-item layout-fill ng-click="sidenav.toggleContent()">
       <span flex class="sidenav-login">login@domainname.com</span>
       <md-icon ng-if="'defaultMenu' === sidenav.currentContent" md-svg-icon="sidenav:drop_down"></md-icon>
       <md-icon ng-if="'accountMenu' === sidenav.currentContent" md-svg-icon="sidenav:drop_up"></md-icon>
@@ -124,7 +124,7 @@
     </md-list-item>
     <md-divider></md-divider>
     <md-list-item
-      ng-click="app.navigateTo('login')">
+      ng-click="app.navigateTo('exit')">
       <md-icon md-svg-icon="sidenav:exit"></md-icon>
       <p>Exit</p>
     </md-list-item>

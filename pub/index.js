@@ -6,6 +6,7 @@ define([
 
   require([
     'module/app/index',
+    'module/register/index',
     'module/sidenav/index',
     'module/start/index',
     'module/text/index',
