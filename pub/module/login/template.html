@@ -9,7 +9,36 @@
     </div>
   </md-toolbar>
 
-  <md-content>
-    Login under construction!
+  <md-content md-scroll-y>
+    <div layout="row" layout-align="center" layout-padding>
+      <md-card layout-fill flex-gt-md="80">
+        <md-card-content>
+          <form name="loginForm" ng-submit="register.submit()">
+            <md-input-container class="md-block">
+              <label>Email</label>
+              <input name="email" type="email" ng-model="register.email" required autofocus>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <input name="password" type="password" ng-model="register.password" required>
+              <div ng-messages="loginForm.url.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+            <div layout="row" layout-align="end">
+              <md-button
+                type="submit"
+                class="md-primary"
+                ng-disabled="loginForm.$pristine || (loginForm.$dirty && loginForm.$invalid)"
+                ng-class="{'md-raised md-hue-2' : (loginForm.$dirty && loginForm.$valid)}">
+                Login
+              </md-button>
+              <md-button type="reset" class="md-primary">Reset</md-button>
+            </div>
+            <a href="">Forgot your password?</a>
+          </form>
+        </md-card-content>
+      </md-card>
+    </div>
   </md-content>
 </div>

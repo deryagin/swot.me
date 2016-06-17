@@ -9,7 +9,35 @@
     </div>
   </md-toolbar>
 
-  <md-content>
-    Register under construction!
+  <md-content md-scroll-y>
+    <div layout="row" layout-align="center" layout-padding>
+      <md-card layout-fill flex-gt-md="80">
+        <md-card-content>
+          <form name="registerForm" ng-submit="register.submit()">
+            <md-input-container class="md-block">
+              <label>Email</label>
+              <input name="email" type="email" ng-model="register.email" maxlength="255" required autofocus>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <input name="password"  type="password" ng-model="register.password" minlength="4" maxlength="255" required>
+              <div ng-messages="registerForm.url.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+            <div layout="row" layout-align="end">
+              <md-button
+                type="submit"
+                class="md-primary"
+                ng-disabled="registerForm.$pristine || (registerForm.$dirty && registerForm.$invalid)"
+                ng-class="{'md-raised md-hue-2' : (registerForm.$dirty && registerForm.$valid)}">
+                Register
+              </md-button>
+              <md-button type="reset" class="md-primary">Reset</md-button>
+            </div>
+          </form>
+        </md-card-content>
+      </md-card>
+    </div>
   </md-content>
 </div>
