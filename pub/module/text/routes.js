@@ -48,7 +48,9 @@ define([
       url: '/read/:id',
       views: {
         'text.content@text': {
-          templateUrl: '/module/text/read/template.html'
+          templateUrl: '/module/text/read/template.html',
+          controller: 'TextReadController',
+          controllerAs: 'textRead'
         }
       }
     });

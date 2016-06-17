@@ -1,6 +1,14 @@
 <div id="module/text/read/template.html">
-  <md-toolbar></md-toolbar>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button ng-click="app.navigateTo('text.list')" class="md-icon-button" aria-label="Back">
+        <md-icon md-svg-icon="general-arrow_back"></md-icon>
+      </md-button>
+
+      <h1>{{textRead.text.title}}</h1>
+    </div>
+  </md-toolbar>
   <md-content>
-    Text Read under construction!
+    {{textRead.text.content}}
   </md-content>
 </div>
