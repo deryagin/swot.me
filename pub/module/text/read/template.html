@@ -4,11 +4,25 @@
       <md-button ng-click="app.navigateTo('text.list')" class="md-icon-button" aria-label="Back">
         <md-icon md-svg-icon="general-arrow_back"></md-icon>
       </md-button>
-
       <h1>{{textRead.text.title}}</h1>
     </div>
+
+    <md-tabs md-selected="textRead.tabIndex" class="md-primary">
+      <md-tab>Read</md-tab>
+      <md-tab>Learn</md-tab>
+    </md-tabs>
   </md-toolbar>
-  <md-content>
-    {{textRead.text.content}}
+
+  <md-content md-scroll-y>
+    <div ng-if="0 == textRead.tabIndex" ng-include="'/module/text/read/template.html#read'"></div>
+    <div ng-if="1 == textRead.tabIndex" ng-include="'/module/text/read/template.html#learn'"></div>
   </md-content>
 </div>
+
+<script type="text/ng-template" id="/module/text/read/template.html#read">
+  Reading text "{{textRead.text.id}}"
+</script>
+
+<script type="text/ng-template" id="/module/text/read/template.html#learn">
+  Learning text "{{textRead.text.id}}"
+</script>
