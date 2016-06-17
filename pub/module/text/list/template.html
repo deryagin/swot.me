@@ -1,12 +1,14 @@
 <div data-template="/module/text/list/template.html" layout="column" flex>
   <md-toolbar
-    ng-if="!textList.showSearch"
+    ng-if="'defaultToolbar' === textList.currentToolbar"
     ng-include="'/module/text/list/template.html#defaultToolbar'">
   </md-toolbar>
+
   <md-toolbar
-    ng-if="textList.showSearch"
+    ng-if="'searchToolbar' === textList.currentToolbar"
     ng-include="'/module/text/list/template.html#searchToolbar'">
   </md-toolbar>
+
   <md-content
     md-scroll-y
     ng-include="'/module/text/list/template.html#textList'">
@@ -25,7 +27,7 @@
       <md-icon md-svg-icon="general-add"></md-icon>
     </md-button>
 
-    <md-button ng-click="textList.showSearch = !textList.showSearch" class="md-icon-button" aria-label="Search">
+    <md-button ng-click="textList.toggleToolbar()" class="md-icon-button" aria-label="Search">
       <md-icon md-svg-icon="general-search"></md-icon>
     </md-button>
 
@@ -35,13 +37,13 @@
 
 <script type="text/ng-template" id="/module/text/list/template.html#searchToolbar">
   <div class="md-toolbar-tools">
-    <md-button ng-click="textList.showSearch = !textList.showSearch" class="md-icon-button" aria-label="Close Search">
+    <md-button ng-click="textList.toggleToolbar()" class="md-icon-button" aria-label="Close Search">
       <md-icon md-svg-icon="general-close"></md-icon>
     </md-button>
 
     <input flex autofocus type="search" ng-model="textList.searchText" class="textList-searchText" placeholder="Search" aria-label="Search">
 
-    <md-button ng-click="textList.showSearch = !textList.showSearch" class="md-icon-button" aria-label="Toggle Search">
+    <md-button ng-click="textList.toggleToolbar()" class="md-icon-button" aria-label="Toggle Search">
       <md-icon md-svg-icon="general-search"></md-icon>
     </md-button>
   </div>

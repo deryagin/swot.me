@@ -12,8 +12,12 @@ define([
     self.collection = TextService.list();
 
     self.currentOrder = '+createdAt';
-    
-    self.showSearch = false;
+
+    self.currentToolbar = 'defaultToolbar';
+
+    self.toggleToolbar = function toggleToolbar() {
+      self.currentToolbar = ('defaultToolbar' === self.currentToolbar ? 'searchToolbar' : 'defaultToolbar');
+    };
 
     self.rename = function rename(textId) {
       var text = TextService.findOne(textId);
