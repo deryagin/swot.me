@@ -8,10 +8,10 @@ define([
     AppRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     $urlRouterProvider.when('', '/start');
+
     $urlRouterProvider.when('/', '/start');
 
-    $stateProvider
-      .state('start', {
+    $stateProvider.state('start', {
         url: '/start',
         views: {
           'app.sidenav@': {
@@ -58,19 +58,21 @@ define([
         }
       }
     });
-  };
 
-  // return [
-  //   {path: '/', redirectTo: '/texts'},
-  //   {path: '/texts', component: {sidenav: 'sidenav', content: 'texts'}},
-  //   {path: '/words', component: {sidenav: 'sidenav', content: 'words'}},
-  //   {path: '/stats', component: {sidenav: 'sidenav', content: 'stats'}},
-  //   {path: '/import', component: {sidenav: 'sidenav', content: 'import'}},
-  //   {path: '/export', component: {sidenav: 'sidenav', content: 'export'}},
-  //   {path: '/settings', component: {sidenav: 'sidenav', content: 'settings'}},
-  //   {path: '/news', component: {sidenav: 'sidenav', content: 'news'}},
-  //   {path: '/ideas', component: {sidenav: 'sidenav', content: 'ideas'}},
-  //   {path: '/help', component: {sidenav: 'sidenav', content: 'help'}},
-  //   {path: '/about', component: {sidenav: 'sidenav', content: 'about'}}
-  // ];
+    $stateProvider.state('login', {
+      url: '/login',
+      views: {
+        'app.sidenav@': {
+          templateUrl: '/module/sidenav/template.html',
+          controller: 'SidenavController',
+          controllerAs: 'sidenav'
+        },
+        'app.content@': {
+          templateUrl: '/module/login/template.html',
+          controller: 'LoginController',
+          controllerAs: 'login'
+        }
+      }
+    });
+  };
 });
