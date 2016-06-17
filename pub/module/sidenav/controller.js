@@ -9,9 +9,15 @@ define([
 
     var self = this;
 
+    self.currentContent = 'defaultMenu';
+
     self.currentMenu = $state.$current.name.split('.')[0] || 'start';
 
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    self.toggleTemplate = function toggleTemplate() {
+      self.currentContent = ('defaultMenu' === self.currentContent ? 'accountMenu' : 'defaultMenu');
+    };
+
+    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
       self.currentMenu = toState.name.split('.')[0];
       $mdSidenav('sidenav-left').close();
     });

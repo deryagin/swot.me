@@ -5,24 +5,35 @@
   md-is-locked-open="$mdMedia('gt-sm')">
 
   <md-toolbar
-    layout-align="center center"
     class="md-tall md-hue-2"
     ng-include="'/module/sidenav/template.html#toolbar'">
   </md-toolbar>
 
   <md-content
-    ng-include="'/module/sidenav/template.html#sideMenu'">
+    ng-if="'defaultMenu' === sidenav.currentContent"
+    ng-include="'/module/sidenav/template.html#defaultMenu'">
+  </md-content>
+
+  <md-content
+    ng-if="'accountMenu' === sidenav.currentContent"
+    ng-include="'/module/sidenav/template.html#accountMenu'">
   </md-content>
 </md-sidenav>
 
 <script type="text/ng-template" id="/module/sidenav/template.html#toolbar">
-  <div class="md-toolbar-tools">
+  <div flex>
     <md-icon md-svg-icon="sidenav:avatar" class="sidenav-avatar"></md-icon>
-    <span>login@domainname.com</span>
+  </div>
+  <div>
+    <md-list-item layout-fill ng-click="sidenav.toggleTemplate()">
+      <span flex class="sidenav-login">login@domainname.com</span>
+      <md-icon ng-if="'defaultMenu' === sidenav.currentContent" md-svg-icon="sidenav:drop_down"></md-icon>
+      <md-icon ng-if="'accountMenu' === sidenav.currentContent" md-svg-icon="sidenav:drop_up"></md-icon>
+    </md-list-item>
   </div>
 </script>
 
-<script type="text/ng-template" id="/module/sidenav/template.html#sideMenu">
+<script type="text/ng-template" id="/module/sidenav/template.html#defaultMenu">
   <md-list>
     <md-list-item
       ng-click="app.navigateTo('start')"
@@ -93,6 +104,29 @@
       ng-class="{'sidenav-active' : 'about' === sidenav.currentMenu}">
       <md-icon md-svg-icon="sidenav:about"></md-icon>
       <p>About</p>
+    </md-list-item>
+  </md-list>
+</script>
+
+<script type="text/ng-template" id="/module/sidenav/template.html#accountMenu">
+  <md-list>
+    <md-list-item
+      ng-click="app.navigateTo('register')"
+      ng-class="{'sidenav-active' : 'register' === sidenav.currentMenu}">
+      <md-icon md-svg-icon="sidenav:register"></md-icon>
+      <p>Register</p>
+    </md-list-item>
+    <md-list-item
+      ng-click="app.navigateTo('login')"
+      ng-class="{'sidenav-active' : 'login' === sidenav.currentMenu}">
+      <md-icon md-svg-icon="sidenav:login"></md-icon>
+      <p>Login</p>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-list-item
+      ng-click="app.navigateTo('login')">
+      <md-icon md-svg-icon="sidenav:exit"></md-icon>
+      <p>Exit</p>
     </md-list-item>
   </md-list>
 </script>
