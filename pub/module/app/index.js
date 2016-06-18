@@ -6,7 +6,8 @@ define([
 ], function(AppConfig, AppRoutes, AppController) {
   'use strict';
 
-  var module = angular.module('swot.app', ['ui.router', 'ngMaterial']);
+  var requires = ['ui.router', 'ngMessages', 'ngMaterial'];
+  var module = angular.module('swot.app', requires);
   module.controller('AppController', AppController);
   module.config(AppConfig);
   module.config(AppRoutes);

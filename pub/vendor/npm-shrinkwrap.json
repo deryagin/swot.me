@@ -20,6 +20,11 @@
       "from": "angular-material@1.1.0-rc.5",
       "resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.1.0-rc.5.tgz"
     },
+    "angular-messages": {
+      "version": "1.5.7",
+      "from": "angular-messages@latest",
+      "resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.5.7.tgz"
+    },
     "angular-ui-router": {
       "version": "0.2.18",
       "from": "angular-ui-router@latest",
