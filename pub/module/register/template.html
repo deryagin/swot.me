@@ -1,43 +1,77 @@
-<div layout="column" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <md-button ng-click="$root.sidenav.toggle()" class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
-        <md-icon md-svg-icon="general-menu"></md-icon>
-      </md-button>
-
-      <h1 flex>Register</h1>
-    </div>
+<div id="/module/register/template.html" layout="column" flex>
+  <md-toolbar
+    ng-include="'/module/register/template.html#toolbar'">
   </md-toolbar>
 
-  <md-content md-scroll-y>
-    <div layout="row" layout-align="center" layout-padding>
-      <md-card layout-fill flex-gt-md="80">
-        <md-card-content>
-          <form name="registerForm" ng-submit="register.submit()">
-            <md-input-container class="md-block">
-              <label>Email</label>
-              <input name="email" type="email" ng-model="register.email" maxlength="255" required autofocus>
-            </md-input-container>
-            <md-input-container class="md-block">
-              <label>Password</label>
-              <input name="password"  type="password" ng-model="register.password" minlength="4" maxlength="255" required>
-              <div ng-messages="registerForm.url.$error">
-                <div ng-message="required">This is required.</div>
-              </div>
-            </md-input-container>
-            <div layout="row" layout-align="end">
-              <md-button
-                type="submit"
-                class="md-primary"
-                ng-disabled="registerForm.$pristine || (registerForm.$dirty && registerForm.$invalid)"
-                ng-class="{'md-raised md-hue-2' : (registerForm.$dirty && registerForm.$valid)}">
-                Register
-              </md-button>
-              <md-button type="reset" class="md-primary">Reset</md-button>
-            </div>
-          </form>
-        </md-card-content>
-      </md-card>
-    </div>
+  <md-content
+    md-scroll-y
+    ng-include="'/module/register/template.html#registerForm'">
   </md-content>
 </div>
+
+<script type="text/ng-template" id="/module/register/template.html#toolbar">
+  <div class="md-toolbar-tools">
+    <md-button ng-click="$root.sidenav.toggle()" class="md-icon-button" hide-gt-sm aria-label="Toggle Menu">
+      <md-icon md-svg-icon="general-menu"></md-icon>
+    </md-button>
+
+    <h1 flex>Register</h1>
+  </div>
+</script>
+
+<script type="text/ng-template" id="/module/register/template.html#registerForm">
+  <div layout="row" layout-align="center" layout-padding>
+    <md-card layout-fill flex-gt-md="80">
+      <md-card-content>
+        <form name="registerForm" ng-submit="register.submit()" novalidate>
+          <md-input-container class="md-block">
+            <label>E-mail</label>
+            <input
+              type="email"
+              name="email"
+              ng-model="register.email"
+              ng-minlength="4"
+              ng-maxlength="64"
+              required
+              autofocus>
+
+            <div ng-messages="registerForm.email.$error">
+              <p ng-message="required">E-mail is required.</p>
+              <p ng-message="minlength">E-mail is too short.</p>
+              <p ng-message="maxlength">E-mail is too long.</p>
+              <p ng-message="email">E-mail is not valid.</p>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              ng-model="register.password"
+              ng-minlength="4"
+              ng-maxlength="64"
+              required>
+
+            <div ng-messages="registerForm.password.$error">
+              <p ng-message="required">Password is required.</p>
+              <p ng-message="minlength">Password is too short.</p>
+              <p ng-message="maxlength">Password is too long.</p>
+            </div>
+          </md-input-container>
+
+          <div layout="row" layout-align="end">
+            <md-button
+              type="submit"
+              class="md-primary"
+              ng-disabled="registerForm.$pristine || (registerForm.$dirty && registerForm.$invalid)"
+              ng-class="{'md-raised md-hue-2' : (registerForm.$dirty && registerForm.$valid)}">
+              Register
+            </md-button>
+            <md-button type="reset" class="md-primary">Reset</md-button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</script>
