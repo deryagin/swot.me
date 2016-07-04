@@ -1,6 +1,6 @@
 {
   "private": true,
-  "description": "This package.json is only used to install Test dependencies.",
-  "dependencies": {
+  "description": "This package.json is only used to install Test devDependencies.",
+  "devDependencies": {
   }
 }

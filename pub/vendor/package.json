@@ -10,5 +10,9 @@
     "angular-ui-router": "^0.2.18",
     "require-css": "^0.1.8",
     "requirejs": "^2.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "node-inspector": "^0.12.8"
   }
 }

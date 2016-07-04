@@ -1,13 +1,17 @@
 {
   "private": true,
   "name": "swot.me",
+  "license": "GPL-3.0",
   "main": "./srv/index.js",
   "description": "This MAIN package.json is only used to run general tasks.",
   "scripts": {
-    "setup": "(cd pub && npm install); (cd srv && npm install); (cd test && npm install); (cd dpl && npm install)",
-    "start": "",
-    "debug": "",
-    "test": "",
-    "cover": ""
+    "dev:setup": "export NODE_ENV=dev; (cd pub && npm install); (cd srv && npm install); (cd test && npm install); (cd dpl && npm install); echo $NODE_ENV;",
+    "dev:start" : "./pub/vendor/node_modules/http-server/bin/http-server pub",
+    "dev:outdated": "(cd pub/vendor && npm outdated); (cd srv/vendor && npm outdated); (cd test/vendor && npm outdated); (cd dpl/vendor && npm outdated);",
+    "dev:debug": "",
+    "test:start": "",
+    "test:cover": "",
+    "prod:setup": "export NODE_ENV=production; (cd pub && npm install); (cd srv && npm install); echo $NODE_ENV;",
+    "prod:start": ""
   }
 }

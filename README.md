@@ -6,3 +6,6 @@
 
 ## Links
 - Angular Material Design Starter App https://codepen.io/kyleledbetter/pen/gbQOaV
+
+## License
+GPL-3.0
