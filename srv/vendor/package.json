@@ -2,5 +2,6 @@
   "private": true,
   "description": "This package.json is only used to install Back-End dependencies.",
   "dependencies": {
+    "express": "^4.14.0"
   }
 }
