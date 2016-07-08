@@ -1,5 +1,6 @@
 module.exports = function configureApp(app) {
-  app.get('/', function (req, res) {
-    res.send('Hello World!');
+  app.get('/ping', function (req, res) {
+    console.log('pong');
+    res.send('pong');
   });
 };
