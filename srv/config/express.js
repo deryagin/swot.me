@@ -1,5 +1,5 @@
-var favicon = require(swot.VENDORDIR + 'serve-favicon');
+var express = require(swot.VENDORDIR + 'express');
 
 module.exports = function configureExpress(app) {
-  app.use(favicon(swot.ROOTDIR + '/pub/resource/favicon.ico'));
+  app.use(express.static('pub/'));
 };
