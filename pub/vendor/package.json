@@ -12,7 +12,6 @@
     "requirejs": "^2.2.0"
   },
   "devDependencies": {
-    "http-server": "^0.9.0",
-    "node-inspector": "^0.12.8"
+    "http-server": "^0.9.0"
   }
 }
