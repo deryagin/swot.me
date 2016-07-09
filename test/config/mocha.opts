@@ -1,0 +1,5 @@
+--require=srv/global.js
+--timeout=2000ms
+--slow=1000ms
+--check-leaks
+--colors

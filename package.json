@@ -10,8 +10,13 @@
     "dev-debug" : "./bin/dev-debug.sh",
     "dev-outdated": "./bin/dev-outdated.sh",
     "dev-http-server" : "./bin/dev-http-server.sh",
-    "test-start": "",
-    "test-cover": "",
+
+    "test-e2e-run": "./bin/protractor test/config/protractor.conf.js",
+    "test-pub-run": "./bin/karma start test/config/karma.conf.js",
+    "test-srv-run": "./bin/mocha --opts test/config/mocha.opts",
+    "test-srv-cover": "./bin/test-srv-cover.sh",
+    "test-update-webdriver": "./bin/webdriver-manager update",
+
     "prod-install": "./bin/prod-install.sh",
     "prod-start": ""
   }
