@@ -8,9 +8,10 @@
     "dev-install": "./bin/dev-install.sh",
     "dev-start" : "./bin/dev-start.sh",
     "dev-debug" : "./bin/dev-debug.sh",
-    "dev-outdated": "./bin/dev-outdated.sh",
-    "dev-shrinkwrap": "./bin/dev-shrinkwrap.sh",
     "dev-http-server" : "./bin/dev-http-server.sh",
+
+    "npm-all-outdated": "./bin/npm-all-outdated.sh",
+    "npm-all-shrinkwrap": "./bin/npm-all-shrinkwrap.sh",
 
     "test-e2e-run": "./bin/protractor test/config/protractor.conf.js",
     "test-pub-run": "./bin/karma start test/config/karma.conf.js",
