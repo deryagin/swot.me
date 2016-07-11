@@ -9,6 +9,7 @@
     "dev-start" : "./bin/dev-start.sh",
     "dev-debug" : "./bin/dev-debug.sh",
     "dev-outdated": "./bin/dev-outdated.sh",
+    "dev-shrinkwrap": "./bin/dev-shrinkwrap.sh",
     "dev-http-server" : "./bin/dev-http-server.sh",
 
     "test-e2e-run": "./bin/protractor test/config/protractor.conf.js",
