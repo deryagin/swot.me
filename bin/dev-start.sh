@@ -2,4 +2,4 @@
 
 echo 'Run Back-End using nodemon tool...'
 
-./bin/nodemon --verbose --watch srv/ -- srv/server.js
+./bin/nodemon --verbose --watch src/srv/ -- src/srv/server.js
