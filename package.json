@@ -8,7 +8,7 @@
     "dev-install-all-deps": "./bin/dev-install-all-deps.sh",
     "dev-nodemon-start" : "./bin/dev-nodemon-start.sh",
     "dev-nodemon-debug" : "./bin/dev-nodemon-debug.sh",
-    "dev-http-server-run" : "./bin/dev-http-server-run.sh",
+    "dev-json-server-run" : "./bin/dev-json-server-run.sh",
 
     "prod-install-all-deps": "./bin/prod-install-all-deps.sh",
 
