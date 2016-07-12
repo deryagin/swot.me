@@ -5,21 +5,21 @@
   "main": "./srv/server.js",
   "description": "This MAIN package.json is only used to run general tasks.",
   "scripts": {
-    "dev-install": "./bin/dev-install.sh",
-    "dev-start" : "./bin/dev-start.sh",
-    "dev-debug" : "./bin/dev-debug.sh",
-    "dev-http-server" : "./bin/dev-http-server.sh",
+    "dev-install-all-deps": "./bin/dev-install-all-deps.sh",
+    "dev-nodemon-start" : "./bin/dev-nodemon-start.sh",
+    "dev-nodemon-debug" : "./bin/dev-nodemon-debug.sh",
+    "dev-http-server-run" : "./bin/dev-http-server-run.sh",
 
-    "npm-all-outdated": "./bin/npm-all-outdated.sh",
-    "npm-all-shrinkwrap": "./bin/npm-all-shrinkwrap.sh",
+    "prod-install-all-deps": "./bin/prod-install-all-deps.sh",
+
+    "pkg-list-all-deps": "./bin/pkg-list-all-deps.sh",
+    "pkg-list-all-outdated": "./bin/pkg-list-all-outdated.sh",
+    "pkg-shrinkwrap-all-deps": "./bin/pkg-shrinkwrap-all-deps.sh",
 
     "test-e2e-run": "./bin/protractor test/config/protractor.conf.js",
     "test-pub-run": "./bin/karma start test/config/karma.conf.js",
     "test-srv-run": "./bin/mocha --opts test/config/mocha.opts",
     "test-srv-cover": "./bin/test-srv-cover.sh",
-    "test-update-webdriver": "./bin/webdriver-manager update",
-
-    "prod-install": "./bin/prod-install.sh",
-    "prod-start": ""
+    "test-update-webdriver": "./bin/webdriver-manager update"
   }
 }
