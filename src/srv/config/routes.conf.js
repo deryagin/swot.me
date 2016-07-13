@@ -1,5 +1,7 @@
 var ping = require(swot.SERVER_DIR + 'module/ping');
 
-module.exports = function configureApp(app) {
+module.exports.configure = configure;
+
+function configure(app) {
   app.use('/', ping.router());
-};
+}
