@@ -5,10 +5,10 @@ module.exports.router = router;
 
 function router() {
   var router = new express.Router();
-  router.post('/text', controller.create);
-  router.get('/text', controller.read);
-  router.put('/text', controller.update);
-  router.delete('/text', controller.delete);
-  router.get('/text/list', controller.list);
+  router.post('/text/create', controller.create);
+  router.post('/text/read', controller.read);
+  router.post('/text/update', controller.update);
+  router.post('/text/delete', controller.delete);
+  router.post('/text/list', controller.list);
   return router;
 }
