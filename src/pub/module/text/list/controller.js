@@ -3,13 +3,13 @@ define([
 ], function() {
   'use strict';
 
-  return function TextListController($mdDialog, TextService) {
+  return function TextListController($scope, $mdDialog, TextService) {
 
-    TextListController.$inject = ['$mdDialog', 'TextService'];
+    TextListController.$inject = ['$scope', '$mdDialog', 'TextService'];
 
     var self = this;
 
-    self.collection = TextService.list();
+    self.collection = populateCollection();
 
     self.currentOrder = '+createdAt';
 
@@ -57,6 +57,18 @@ define([
         .ariaLabel('Text Delete')
         .ok('Ok')
         .cancel('Cancel');
+    }
+
+    function populateCollection() {
+      return TextService.list({},
+        function succeed(data) {
+          self.collection = data;
+          $scope.$apply();
+        },
+        function failed(err) {
+          console.dir(err);
+        }
+      );
     }
   };
 });

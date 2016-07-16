@@ -9,7 +9,7 @@ define([
     var self = this;
 
     var headers = {
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
       'Accept': 'application/json'
     };
 
