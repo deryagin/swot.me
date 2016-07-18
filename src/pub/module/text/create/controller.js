@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function textCreateController($state, TextService) {
+  return function textCreateController($state, TextItemService) {
 
-    textCreateController.$inject = ['$state', 'TextService'];
+    textCreateController.$inject = ['$state', 'TextItemService'];
 
     var self = this;
 
@@ -15,7 +15,7 @@ define([
 
     self.copyIn = function copyIn() {
 
-      var created = TextService.create({
+      var created = TextItemService.create({
         title: self.title,
         content: self.content
       });
