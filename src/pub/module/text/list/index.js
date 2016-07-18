@@ -1,8 +1,8 @@
 define([
   'module/text/list/config',
   'module/text/list/controller',
-  'service/text.item.service',
-  'service/text.list.service',
+  'common/service/text.item.service',
+  'common/service/text.list.service',
   'css!module/text/list/styles'
 
 ], function(TextConfig, TextListController, TextItemService, TextListService) {
