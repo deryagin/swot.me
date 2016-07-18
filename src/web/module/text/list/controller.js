@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextListController($scope, $mdDialog, TextItemService, TextListService) {
+  return function TextListController($scope, $mdDialog, ServiceFactory) {
 
-    TextListController.$inject = ['$scope', '$mdDialog', 'TextItemService', 'TextListService'];
+    TextListController.$inject = ['$scope', '$mdDialog', 'ServiceFactory'];
 
     var self = this;
 
@@ -60,6 +60,7 @@ define([
     }
 
     function populateCollection() {
+      var TextListService = ServiceFactory.createListService();
       TextListService.read({})
         .then(function succeed(data) {
           self.collection = data;
