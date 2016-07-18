@@ -21,9 +21,9 @@ define([
     };
 
     self.send = function send(url, body) {
-      var request = new Request(url, options);
+      var request = new window.Request(url, options);
       request.body = JSON.stringify(body);
-      return fetch(request)
+      return window.fetch(request)
         .then(self.checkStatus)
         .then(self.parseJSON);
     };

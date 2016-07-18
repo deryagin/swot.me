@@ -1,5 +1,5 @@
 define([
-  'common/utility/rest.service'
+  'utility/rest.service'
 
 ], function(RestService) {
   'use strict';

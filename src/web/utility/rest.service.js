@@ -1,5 +1,5 @@
 define([
-  'common/utility/http.transport'
+  'utility/http.transport'
 
 ], function(HttpTransport) {
   'use strict';
