@@ -3,9 +3,9 @@ define([
 ], function() {
   'use strict';
 
-  return function TextListController($scope, $mdDialog, TextService) {
+  return function TextListController($scope, $mdDialog, TextItemService, TextListService) {
 
-    TextListController.$inject = ['$scope', '$mdDialog', 'TextService'];
+    TextListController.$inject = ['$scope', '$mdDialog', 'TextItemService', 'TextListService'];
 
     var self = this;
 
@@ -19,23 +19,23 @@ define([
       self.currentToolbar = ('defaultToolbar' === self.currentToolbar ? 'searchToolbar' : 'defaultToolbar');
     };
 
-    self.rename = function rename(textId) {
-      var text = TextService.findOne(textId);
-      var confirmDialog = buildRenameDialog(text);
-      $mdDialog.show(confirmDialog).then(function (newTitle) {
-        if (newTitle && newTitle !== text.title) {
-          TextService.update({ id: textId, title: newTitle});
-        }
-      });
-    };
+    // self.rename = function rename(text) {
+    //   var confirmDialog = buildRenameDialog(text);
+    //   $mdDialog.show(confirmDialog).then(function (newTitle) {
+    //     if (newTitle && newTitle !== text.title) {
+    //       text.title = newTitle;
+    //       TextItemService.update(text);
+    //     }
+    //   });
+    // };
 
-    self.remove = function remove(textId) {
-      var text = TextService.findOne(textId);
-      var confirmDialog = buildRemoveModal(text);
-      $mdDialog.show(confirmDialog).then(function () {
-        TextService.delete(textId);
-      });
-    };
+    // self.remove = function remove(textId) {
+    //   var text = TextService.findOne(textId);
+    //   var confirmDialog = buildRemoveModal(text);
+    //   $mdDialog.show(confirmDialog).then(function () {
+    //     TextService.delete(textId);
+    //   });
+    // };
 
     self.sortBy = function orderBy(selectedOrder) {
       self.currentOrder = selectedOrder;
@@ -60,15 +60,24 @@ define([
     }
 
     function populateCollection() {
-      return TextService.list({},
-        function succeed(data) {
+      TextListService.read({})
+        .then(function succeed(data) {
           self.collection = data;
           $scope.$apply();
-        },
-        function failed(err) {
+        })
+        .catch(function failed(err) {
           console.dir(err);
-        }
-      );
+        });
+      return [];
+      // return TextListService.read({},
+      //   function succeed(data) {
+      //     self.collection = data;
+      //     $scope.$apply();
+      //   },
+      //   function failed(err) {
+      //     console.dir(err);
+      //   }
+      // );
     }
   };
 });

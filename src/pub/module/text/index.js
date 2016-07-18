@@ -2,10 +2,9 @@ define([
   'module/text/routes',
   'module/text/create/index',
   'module/text/read/index',
-  'module/text/list/index',
-  'service/text.service'
+  'module/text/list/index'
 
-], function(TextRoutes, CreateModule, ReadModule, ListModule, TextService) {
+], function(TextRoutes, CreateModule, ReadModule, ListModule) {
   'use strict';
 
   var module = angular.module('swot.text', [
@@ -14,6 +13,5 @@ define([
     ListModule.name
   ]);
   module.config(TextRoutes);
-  module.service('TextService', TextService);
   return module;
 });
