@@ -7,7 +7,7 @@ module.exports.configure = configure;
 
 function configure(app) {
   app.use(compression());
-  app.use(express.static('src/pub/'));
+  app.use(express.static('src/web/'));
   app.use(bodyParser.json());
   app.use(morgan('[:date[iso]] :remote-addr :method :url :status :res[content-length] :response-time ms'));
 }

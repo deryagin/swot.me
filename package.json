@@ -17,7 +17,7 @@
     "pkg-shrinkwrap-all-deps": "./bin/pkg-shrinkwrap-all-deps.sh",
 
     "test-e2e-run": "./bin/protractor test/config/protractor.conf.js",
-    "test-pub-run": "./bin/karma start test/config/karma.conf.js",
+    "test-web-run": "./bin/karma start test/config/karma.conf.js",
     "test-srv-run": "./bin/mocha --opts test/config/mocha.opts",
     "test-srv-cover": "./bin/test-srv-cover.sh",
     "test-update-webdriver": "./bin/webdriver-manager update"
