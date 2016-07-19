@@ -34,8 +34,6 @@ function update(req, res) {
   text.title = req.body.title;
   text.accessedAt = new Date();
   text.content = req.body.content;
-
-  collection.push(text);
   res.json(text);
 }
 
