@@ -8,32 +8,26 @@ define([
 
     var self = this;
 
-    var headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    };
-
-    var options = {
+    self.options = {
       method: 'POST',
-      headers: headers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: '',
       mode: 'same-origin',
       credentials: 'same-origin'
     };
 
-    self.send = function send(url, body) {
-      var request = new window.Request(url, options);
-      request.body = JSON.stringify(body);
-      return window.fetch(request)
+    self.send = function send(url, json) {
+      self.options.body = JSON.stringify(json || {});
+      return window.fetch(url, self.options)
         .then(self.checkStatus)
         .then(self.parseJSON);
     };
 
     self.checkStatus = function checkStatus(response) {
-      if (response.ok) {
-        return response;
-      } else {
-        return new Error(response.statusText);
-      }
+      return (response.ok ? response : new Error(response.statusText));
     };
 
     self.parseJSON = function parseJSON(response) {

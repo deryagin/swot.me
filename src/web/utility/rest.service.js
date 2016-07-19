@@ -12,20 +12,20 @@ define([
 
     self.transport = new HttpTransport();
 
-    self.create = function create(props) {
-      return self.transport.send(self.baseUrl + '/create', props);
+    self.create = function create(json) {
+      return self.transport.send(self.baseUrl + '/create', json);
     };
 
-    self.read = function read(id) {
-      return self.transport.send(self.baseUrl + '/read', {id: id});
+    self.read = function read(json) {
+      return self.transport.send(self.baseUrl + '/read', json);
     };
 
-    self.update = function update(props) {
-      return self.transport.send(self.baseUrl + '/update', props);
+    self.update = function update(json) {
+      return self.transport.send(self.baseUrl + '/update', json);
     };
 
-    self.delete = function deleteIt(id) {
-      return self.transport.send(self.baseUrl + '/delete', {id: id});
+    self.delete = function deleteIt(json) {
+      return self.transport.send(self.baseUrl + '/delete', json);
     };
   }
 });
