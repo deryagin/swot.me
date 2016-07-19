@@ -3,82 +3,64 @@ define([
 ], function() {
   'use strict';
 
-  return function TextListController($scope, $mdDialog, ServiceFactory) {
+  return function TextListController($scope, TextServices, TextListDialogs) {
 
-    TextListController.$inject = ['$scope', '$mdDialog', 'ServiceFactory'];
+    TextListController.$inject = ['$scope', 'TextServices', 'TextListDialogs'];
 
     var self = this;
 
-    self.collection = populateCollection();
+    self.collection = populate();
 
     self.currentOrder = '+createdAt';
 
     self.currentToolbar = 'defaultToolbar';
 
-    self.toggleToolbar = function toggleToolbar() {
-      self.currentToolbar = ('defaultToolbar' === self.currentToolbar ? 'searchToolbar' : 'defaultToolbar');
+    self.rename = function rename(text) {
+      TextListDialogs.showRenameDialog(text)
+        .then(function onConfirmed(newTitle) {
+          if (newTitle && newTitle !== text.title) {
+            var props = {id: text.id, title: newTitle};
+            return TextServices.createItemService().update(props);
+          }
+        })
+        .then(function onUpdated(data) {
+          text.title = data.title;
+          text.accessedAt = data.accessedAt;
+        });
     };
 
-    // self.rename = function rename(text) {
-    //   var confirmDialog = buildRenameDialog(text);
-    //   $mdDialog.show(confirmDialog).then(function (newTitle) {
-    //     if (newTitle && newTitle !== text.title) {
-    //       text.title = newTitle;
-    //       TextItemService.update(text);
-    //     }
-    //   });
-    // };
-
-    // self.remove = function remove(textId) {
-    //   var text = TextService.findOne(textId);
-    //   var confirmDialog = buildRemoveModal(text);
-    //   $mdDialog.show(confirmDialog).then(function () {
-    //     TextService.delete(textId);
-    //   });
-    // };
+    self.delete = function deleteIt(text) {
+      TextListDialogs.showRemoveDialog(text)
+        .then(function onConfirmed() {
+          var props = {id: text.id};
+          return TextServices.createItemService().delete(props);
+        })
+        .then(function onDeleted() {
+          var index = self.collection.indexOf(text);
+          if (-1 < index) {
+            self.collection.splice(index, 1);
+          }
+        });
+    };
 
     self.sortBy = function orderBy(selectedOrder) {
       self.currentOrder = selectedOrder;
     };
 
-    function buildRenameDialog(text) {
-      return $mdDialog.prompt()
-        .title('Enter new name:')
-        .placeholder(text.title)
-        .ariaLabel('Text Rename')
-        .ok('Ok')
-        .cancel('Cancel');
-    }
+    self.toggleToolbar = function toggleToolbar() {
+      self.currentToolbar = ('defaultToolbar' === self.currentToolbar ? 'searchToolbar' : 'defaultToolbar');
+    };
 
-    function buildRemoveModal(text) {
-      return $mdDialog.confirm()
-        .title('Would you like to delete:')
-        .textContent(text.title)
-        .ariaLabel('Text Delete')
-        .ok('Ok')
-        .cancel('Cancel');
-    }
-
-    function populateCollection() {
-      var TextListService = ServiceFactory.createListService();
-      TextListService.read({})
-        .then(function succeed(data) {
-          self.collection = data;
+    function populate() {
+      TextServices.createListService().read()
+        .then(function onSucceed(textCollection) {
+          self.collection = textCollection;
           $scope.$apply();
         })
-        .catch(function failed(err) {
+        .catch(function onFailed(err) {
           console.dir(err);
         });
       return [];
-      // return TextListService.read({},
-      //   function succeed(data) {
-      //     self.collection = data;
-      //     $scope.$apply();
-      //   },
-      //   function failed(err) {
-      //     console.dir(err);
-      //   }
-      // );
     }
   };
 });

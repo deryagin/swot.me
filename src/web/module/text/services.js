@@ -4,16 +4,16 @@ define([
 ], function(RestService) {
   'use strict';
 
-  return function TextService() {
+  return function TextServices() {
 
     var self = this;
 
     self.createItemService = function createItemService() {
-      return new RestService('/text');
+      return new RestService('/api/text');
     };
 
     self.createListService = function createListService() {
-      return new RestService('/text/list');
+      return new RestService('/api/text/list');
     };
   };
 });
