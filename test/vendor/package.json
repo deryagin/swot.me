@@ -2,12 +2,5 @@
   "private": true,
   "description": "This package.json is only used to install Test devDependencies.",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "istanbul": "^0.4.4",
-    "karma": "^1.1.1",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-mocha": "^1.1.1",
-    "mocha": "^2.5.3",
-    "protractor": "^3.3.0"
   }
 }
